@@ -1,0 +1,83 @@
+/* Project Meta */
+
+/* reset  */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* general */
+
+html {
+  font-size: 10px;
+}
+
+.dev-intro {
+  font-size: 1.5rem;
+  line-height: 21px;
+  letter-spacing: -1%;
+  font-weight: 400;
+}
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+#start-collab {
+  height: 50px;
+  border: none;
+  color: #fff;
+  background: #1a2236;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+#start-collab:hover,
+#start-collab:focus {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+#start-collab:active {
+  border: 2px solid #000;
+  background-color: #fff;
+  color: #000;
+}
+
+/* typography */
+.dev-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 0.9;
+}
+
+/* grid */
+
+/* header */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5%;
+}
+#menu-i {
+  width: 20px;
+  margin-right: 14px;
+}
+
+/* footer */
+
+/* Page template A */
+
+/* Page template B */
+
+/* Media Queries */
