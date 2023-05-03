@@ -14,19 +14,19 @@ html {
   font-size: 10px;
 }
 
-.dev-intro {
-  font-size: 1.5rem;
-  line-height: 21px;
-  letter-spacing: -1%;
-  font-weight: 400;
-}
-
 #hero {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 16px;
   font-family: "Poppins", sans-serif;
+}
+
+.dev-intro {
+  font-size: 1.5rem;
+  line-height: 21px;
+  letter-spacing: -1%;
+  font-weight: 400;
 }
 
 #start-collab {
@@ -51,13 +51,14 @@ html {
   color: #000;
 }
 
-/* typography */
 .dev-name {
   font-family: "Playfair Display", serif;
   font-weight: 400;
   font-size: 5rem;
   line-height: 0.9;
 }
+
+/* typography */
 
 /* grid */
 
