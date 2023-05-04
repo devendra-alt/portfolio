@@ -21,18 +21,8 @@ html {
   font-weight: 400;
 }
 
-.hero-end {
-  position: relative;
-  width: 100%;
-  height: 200px;
-}
-
 .hero-end img {
-  position: absolute;
-  top: 10%;
   width: 100%;
-  height: 80%;
-  object-fit: cover;
 }
 
 .title {
@@ -155,23 +145,27 @@ html {
   gap: 1rem;
 }
 
-.details {
-  height: 289px;
+.details-container {
   color: #fff;
 }
 
-.details h5 {
-  font-weight: 800;
-  font-size: 2rem;
-  margin-top: 5rem;
-  margin-bottom: 2rem;
+.card {
+  padding-left: 5rem;
+  list-style: none;
+  height: 289px;
 }
 
-.details ul {
+.card h5 {
+  font-size: 2rem;
+  margin-bottom: 2.1rem;
+  padding-top: 5rem;
+}
+
+.list-i {
   font-size: 1.8rem;
   font-weight: 600;
-  margin-top: 2.1rem;
-  margin-left: 5rem;
+  list-style-type: disc;
+  margin-left: 2rem;
 }
 
 #langs {
