@@ -30,7 +30,6 @@ html {
 .hero-end img {
   position: absolute;
   top: 10%;
-
   width: 100%;
   height: 80%;
   object-fit: cover;
@@ -48,6 +47,7 @@ html {
   line-height: 2.1rem;
   letter-spacing: -1%;
 }
+
 .g-btn {
   height: 50px;
   border: none;
@@ -87,6 +87,7 @@ html {
 .project-img {
   width: 100%;
 }
+
 .project p {
   font-size: 2rem;
   font-weight: 300;
@@ -114,7 +115,7 @@ html {
   padding: 1.5rem;
   text-align: center;
   font-size: 1.6rem;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   background-color: #1a2236;
   color: #fff;
   align-items: center;
@@ -204,7 +205,7 @@ html {
   font-family: "Playfair Display", serif;
 }
 
-/* grid  & flex*/
+/* grid  & flex */
 
 #projects {
   display: grid;
