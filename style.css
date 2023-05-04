@@ -22,6 +22,13 @@ html {
   font-family: "Poppins", sans-serif;
 }
 
+.dev-name {
+  font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-size: 5rem;
+  line-height: 0.9;
+}
+
 .dev-intro {
   font-size: 1.5rem;
   line-height: 21px;
@@ -51,16 +58,75 @@ html {
   color: #000;
 }
 
-.dev-name {
-  font-family: "Playfair Display", serif;
-  font-weight: 400;
+#project-title {
   font-size: 5rem;
-  line-height: 0.9;
+  color: #1a2236;
+  font-family: "Playfair Display", serif;
+  text-transform: capitalize;
+  font-weight: 400;
+  margin-bottom: 32px;
+  padding-left: 16px;
+}
+
+.project {
+  background-color: #1a2236;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+}
+
+.project-img {
+  width: 100%;
+}
+.project p {
+  font-size: 2rem;
+  font-weight: 300;
+  padding-left: 16px;
+  margin-bottom: 2rem;
+}
+
+.project-langs {
+  padding-left: 16px;
+  color: #1a2236;
+  font-size: 1rem;
+  list-style: none;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.project-lang {
+  background-color: #98dede;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  margin-right: 1rem;
+  height: 2rem;
+}
+
+.project-btn {
+  margin-left: 16px;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  border: 1px solid #ffffff;
+  background-color: #1a2236;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.project-btn span {
+  padding-right: 1rem;
 }
 
 /* typography */
 
 /* grid */
+
+#projects {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  width: 100%;
+}
 
 /* header */
 
