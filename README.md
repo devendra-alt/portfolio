@@ -48,7 +48,8 @@
 
 - **Header With Menu Icon and Background Image**
 - **My Personal Introduction on Hero Section**
-- **HTML+CSS linter(hitx)**
+- **My Project Work Displayed**
+- **About Me Section With Details**
 - **github workflow linter(html+css)**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -145,8 +146,8 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **adding project cards**
-- [ ] **making website responsive**
+- [ ] **adding contact us form**
+- [ ] **making website responsive to desktop**
 - [ ] **adding footer**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>

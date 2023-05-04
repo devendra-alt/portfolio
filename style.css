@@ -15,21 +15,30 @@ html {
 }
 
 #hero {
-  display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 16px;
-  font-family: "Poppins", sans-serif;
-}
-
-.dev-intro {
-  font-size: 1.5rem;
-  line-height: 21px;
-  letter-spacing: -1%;
+  gap: 2.4rem;
+  padding: 1.6rem;
   font-weight: 400;
 }
 
-#start-collab {
+.hero-end img {
+  width: 100%;
+}
+
+.title {
+  font-size: 5rem;
+  line-height: 0.9;
+  font-weight: 400;
+  color: #1a2236;
+}
+
+.dev-intro {
+  font-size: 1.6rem;
+  line-height: 2.1rem;
+  letter-spacing: -1%;
+}
+
+.g-btn {
   height: 50px;
   border: none;
   color: #fff;
@@ -38,29 +47,170 @@ html {
   text-transform: capitalize;
 }
 
-#start-collab:hover,
-#start-collab:focus {
+.g-btn:hover,
+.g-btn:focus {
   border: 1px solid #000;
   background-color: #fff;
   color: #000;
 }
 
-#start-collab:active {
+.g-btn:active {
   border: 2px solid #000;
   background-color: #fff;
   color: #000;
 }
 
-.dev-name {
-  font-family: "Playfair Display", serif;
+.project {
+  color: #fff;
+  flex-flow: column;
+  gap: 2rem;
+  padding-bottom: 2rem;
+  background-color: #1a2236;
+}
+
+#project-title {
+  text-transform: capitalize;
+  margin-bottom: 3.2rem;
+  padding-left: 1.6rem;
+}
+
+.project-img {
+  width: 100%;
+}
+
+.project p {
+  font-size: 2rem;
+  font-weight: 300;
+  padding-left: 1.6rem;
+}
+
+.project-langs {
+  padding-left: 1.6rem;
+  color: #1a2236;
+  font-size: 1rem;
+  font-weight: 300;
+  list-style: none;
+  gap: 1rem;
+}
+
+.project-lang {
+  background-color: #98dede;
+  display: inline-block;
+  padding: 0.2rem 1rem;
+  height: 2rem;
+}
+
+.project-btn {
+  margin-left: 1.6rem;
+  padding: 1.5rem;
+  text-align: center;
+  font-size: 1.6rem;
+  border: 1px solid #fff;
+  background-color: #1a2236;
+  color: #fff;
+  align-items: center;
+  width: 53%;
+}
+
+.project-btn:hover {
+  color: #1a2236;
+  background-color: #fff;
+  border: 1px solid #1a2236;
+}
+
+.project-btn:active {
+  border: 2px solid #1a2236;
+}
+
+.project-btn span {
+  padding-right: 1rem;
+}
+
+.about {
+  flex-direction: column;
+  padding: 1.6rem;
+  gap: 2rem;
+}
+
+#about-me-details {
   font-weight: 400;
-  font-size: 5rem;
-  line-height: 0.9;
+  font-size: 1.4rem;
+  line-height: 2.1rem;
+  color: #1a2236;
+}
+
+#get-cv-btn {
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.details-container {
+  color: #fff;
+}
+
+.card {
+  padding-left: 5rem;
+  list-style: none;
+  height: 289px;
+}
+
+.card h5 {
+  font-size: 2rem;
+  margin-bottom: 2.1rem;
+  padding-top: 5rem;
+}
+
+.list-i {
+  font-size: 1.8rem;
+  font-weight: 600;
+  list-style-type: disc;
+  margin-left: 2rem;
+}
+
+#langs {
+  background-color: #1c528a;
+  background-image: url(/assets/images/hash-lang.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+#frameworks {
+  background-color: #e2505c;
+  background-image: url(/assets/images/framework-bg.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+}
+
+#skills {
+  background-color: #febf52;
+  background-image: url(/assets/images/skills-bg.svg);
+  background-repeat: no-repeat;
+  background-position: right bottom;
 }
 
 /* typography */
 
-/* grid */
+.popins {
+  font-family: "Poppins", sans-serif;
+}
+
+.playfair {
+  font-family: "Playfair Display", serif;
+}
+
+/* grid  & flex */
+
+#projects {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: 1fr;
+  width: 100%;
+}
+
+.flex {
+  display: flex;
+}
 
 /* header */
 
