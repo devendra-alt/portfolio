@@ -301,6 +301,32 @@ header {
 
 /* footer */
 
+footer {
+  background: #1a2236;
+  flex-direction: column;
+}
+
+#get-resume {
+  margin-top: 2.8rem;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  border: none;
+  background-color: #1a2236;
+  color: #92dcdc;
+  font-weight: 500;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+footer ul {
+  text-align: center;
+  justify-content: space-between;
+  margin: 4rem;
+  list-style: none;
+  gap: 1rem;
+}
+
 /* Page template A */
 
 /* Page template B */
