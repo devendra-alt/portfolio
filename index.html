@@ -5,6 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio:Devendra Mulewa</title>
+
+    <!-- bootstrap -->
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,9 +25,15 @@
   </head>
   <body>
     <!-- header section -->
-    <header>
-      <img src="./assets/images/image_geometry_1.svg" alt="" />
+    <header class="flex">
+      <img src="./assets/images/image_geometry_1.svg" alt="" class="l-t-img" />
       <nav class="nav">
+        <ul class="nav-links popins">
+          <li><a href="" class="nav-link">Hello</a></li>
+          <li><a href="" class="nav-link">Portfolio</a></li>
+          <li><a href="" class="nav-link">About</a></li>
+          <li><a href="" class="nav-link">Contact</a></li>
+        </ul>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -38,14 +54,21 @@
 
     <!-- hero content section -->
     <sections id="hero" class="flex popins">
-      <h1 class="title playfair">Devendra Mulewa</h1>
-      <p class="dev-intro">
-        Hello! I am a software developer! I can help you build a product,
-        feature or website. Take a look at my work. <br /><br />
-        If you like what you see and have a project you need coded, don’t
-        hesitate to contact me.
-      </p>
-      <button class="g-btn">start collabration</button>
+      <div class="hero-container">
+        <h1 class="title playfair">Devendra Mulewa</h1>
+        <p class="dev-intro">
+          Hello! I am a software developer! I can help you build a product,
+          feature or website. Take a look at my work. <br /><br />
+          If you like what you see and have a project you need coded, don’t
+          hesitate to contact me.
+        </p>
+        <button class="g-btn popins" id="start-collab-btn">
+          start collabration
+        </button>
+      </div>
+      <figure class="hero-main">
+        <img src="assets/images/hero-main.svg" alt="" srcset="" />
+      </figure>
       <figure class="hero-end">
         <img
           src="assets/images/image_geometry_2.svg"
@@ -243,6 +266,29 @@
           </li>
         </ul>
       </div>
+    </section>
+
+    <!-- Contact ME -->
+
+    <section id="contact-me" class="playfair">
+      <img
+        src="assets/images/image_geometry_1.svg"
+        alt=""
+        class="contact-t-img"
+      />
+      <h3 id="get-started" class="title">Get started</h3>
+      <p class="contact-intro">
+        I'm always interested in hearing about new projects, so if you'd like to
+        chat please get in touch.
+      </p>
+
+      <!-- contact form -->
+
+      <form action="" class="popins">
+        <input type="text" />
+        <input type="text" />
+        <input type="text" />
+      </form>
     </section>
   </body>
 </html>
