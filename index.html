@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio:Devendra Mulewa</title>
 
-    <!-- bootstrap -->
-
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -285,10 +276,34 @@
       <!-- contact form -->
 
       <form action="" class="popins">
-        <input type="text" />
-        <input type="text" />
-        <input type="text" />
+        <label for="user-name" class="form-label">Your name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user-name"
+          placeholder="Anastasiia"
+        />
+        <label for="email" class="form-label">Your email</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          placeholder="anastasiia@gm..."
+        />
+        <label for="user-message" class="form-label">Your message</label>
+        <textarea
+          class="form-control"
+          id="user-message"
+          rows="3"
+          placeholder="Enter your message here..."
+        ></textarea>
+        <button class="g-btn popins" id="start-collab-btn">
+          start collabration
+        </button>
       </form>
     </section>
+
+    
+
   </body>
 </html>
