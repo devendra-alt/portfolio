@@ -395,12 +395,11 @@ footer ul {
   .hero-main {
     display: block;
     background: url(assets/images/hero-main.svg);
-    background-size: cover;
-    height: 85rem;
+    background-size: 100% 100%;
   }
 
   .hero-container {
-    height: 85rem;
+    height: 75rem;
     padding-left: 10rem;
     padding-right: 5rem;
     flex-direction: column;
@@ -433,8 +432,7 @@ footer ul {
   }
 
   .project-head {
-    text-align: left;
-    padding-left: 1.6rem;
+    padding-left: 10rem;
   }
 
   #project-title {
