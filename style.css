@@ -16,7 +16,7 @@ html {
 
 #hero {
   flex-direction: column;
-  gap: 2.4rem;
+  gap: 2.5rem;
   padding: 1.6rem;
   font-weight: 400;
 }
@@ -27,6 +27,11 @@ html {
 
 .hero-end img {
   width: 100%;
+}
+
+.hero-container {
+  flex-direction: column;
+  gap: 2.2rem;
 }
 
 .title {
@@ -274,7 +279,7 @@ input:hover {
 #projects {
   display: grid;
   grid-template-rows: repeat(6, 1fr);
-  grid-template-rows: 1fr;
+  grid-template-columns: 1fr;
   width: 100%;
 }
 
@@ -377,22 +382,65 @@ footer ul {
 
   #hero {
     flex-direction: row;
-    width: 100vw;
+    width: 100%;
+    gap: 0;
+    padding: 0;
+    margin-bottom: 20rem;
+  }
+
+  #hero > * {
+    width: 50%;
   }
 
   .hero-main {
     display: block;
+    background: url(assets/images/hero-main.svg);
+    background-size: cover;
+    height: 85rem;
   }
 
   .hero-container {
-    margin-left: 3rem;
+    height: 85rem;
+    padding-left: 10rem;
+    padding-right: 5rem;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(assets/images/image_dots.svg);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    gap: 5rem;
   }
 
-  .hero-container > h1 {
-    font-size: 10.1rem;
+  .hero-container h1 {
+    font-size: 10rem;
+    line-height: 100%;
+    width: 50%;
+  }
+
+  #start-collab-btn {
+    width: 50%;
   }
 
   .hero-end {
     display: none;
+  }
+
+  /* project section */
+
+  #projects {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 27rem);
+  }
+
+  .project-head {
+    text-align: left;
+    padding-left: 1.6rem;
+  }
+
+  #project-title {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 1;
+    writing-mode: vertical-lr;
+    transform: rotate(180deg);
   }
 }
