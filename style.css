@@ -95,9 +95,10 @@ html {
 
 .project-lang {
   background-color: #98dede;
-  display: inline-block;
+  display: inline;
   padding: 0.2rem 1rem;
   height: 2rem;
+  float: left;
 }
 
 .project-btn {
