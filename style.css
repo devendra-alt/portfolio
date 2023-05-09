@@ -164,9 +164,11 @@ html {
 .details-container {
   color: #fff;
 }
+
 .details-container ul {
   padding: 0;
 }
+
 .card {
   padding-left: 4rem;
   list-style: none;
@@ -313,6 +315,14 @@ footer {
   flex-direction: column;
 }
 
+footer ul {
+  text-align: center;
+  justify-content: space-between;
+  margin: 4rem;
+  list-style: none;
+  gap: 1rem;
+}
+
 #get-resume {
   margin-top: 2.8rem;
   justify-content: center;
@@ -324,14 +334,6 @@ footer {
   font-weight: 500;
   font-size: 1.6rem;
   cursor: pointer;
-}
-
-footer ul {
-  text-align: center;
-  justify-content: space-between;
-  margin: 4rem;
-  list-style: none;
-  gap: 1rem;
 }
 
 /* Page template A */
