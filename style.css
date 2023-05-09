@@ -165,6 +165,14 @@ html {
   color: #fff;
 }
 
+footer ul {
+  text-align: center;
+  justify-content: space-between;
+  margin: 4rem;
+  list-style: none;
+  gap: 1rem;
+}
+
 .details-container ul {
   padding: 0;
 }
@@ -313,14 +321,6 @@ header {
 footer {
   background: #1a2236;
   flex-direction: column;
-}
-
-footer ul {
-  text-align: center;
-  justify-content: space-between;
-  margin: 4rem;
-  list-style: none;
-  gap: 1rem;
 }
 
 #get-resume {
