@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio:Devendra Mulewa</title>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,15 +15,9 @@
   </head>
   <body>
     <!-- header section -->
-    <header class="flex">
-      <img src="./assets/images/image_geometry_1.svg" alt="" class="l-t-img" />
+    <header>
+      <img src="./assets/images/image_geometry_1.svg" alt="" />
       <nav class="nav">
-        <ul class="nav-links popins">
-          <li><a href="" class="nav-link">Hello</a></li>
-          <li><a href="" class="nav-link">Portfolio</a></li>
-          <li><a href="" class="nav-link">About</a></li>
-          <li><a href="" class="nav-link">Contact</a></li>
-        </ul>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -45,33 +38,27 @@
 
     <!-- hero content section -->
     <sections id="hero" class="flex popins">
-      <div class="hero-container flex">
-        <h1 class="title playfair">Devendra Mulewa</h1>
-        <p class="dev-intro">
-          Hello! I am a software developer! I can help you build a product,
-          feature or website. Take a look at my work. <br /><br />
-          If you like what you see and have a project you need coded, don’t
-          hesitate to contact me.
-        </p>
-        <button class="g-btn popins" id="start-collab-btn">
-          start collabration
-        </button>
-      </div>
-      <div class="hero-main"></div>
-      <div class="hero-end">
+      <h1 class="title playfair">Devendra Mulewa</h1>
+      <p class="dev-intro">
+        Hello! I am a software developer! I can help you build a product,
+        feature or website. Take a look at my work. <br /><br />
+        If you like what you see and have a project you need coded, don’t
+        hesitate to contact me.
+      </p>
+      <button class="g-btn">start collabration</button>
+      <figure class="hero-end">
         <img
           src="assets/images/image_geometry_2.svg"
           alt="hero section background"
         />
-      </div>
+      </figure>
     </sections>
 
     <!-- project section -->
 
     <section id="projects" class="popins">
-      <div class="project-head">
-        <span id="project-title" class="playfair title">projects</span>
-      </div>
+      <h3 id="project-title" class="playfair title">projects</h3>
+
       <article class="project flex">
         <img
           src="assets/images/project-01.svg"
@@ -79,7 +66,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -102,7 +89,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -125,7 +112,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -148,7 +135,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -171,7 +158,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -194,7 +181,7 @@
           class="project-img"
         />
         <p>Project name goes here</p>
-        <ul class="project-langs">
+        <ul class="project-langs flex">
           <li class="project-lang">HTML/CSS</li>
           <li class="project-lang">Ruby on Rails</li>
           <li class="project-lang">JavaScript</li>
@@ -257,90 +244,5 @@
         </ul>
       </div>
     </section>
-
-    <!-- Contact ME -->
-
-    <section id="contact-me" class="playfair">
-      <img
-        src="assets/images/image_geometry_1.svg"
-        alt=""
-        class="contact-t-img"
-      />
-      <h3 id="get-started" class="title">Get started</h3>
-      <p class="contact-intro">
-        I'm always interested in hearing about new projects, so if you'd like to
-        chat please get in touch.
-      </p>
-
-      <!-- contact form -->
-
-      <form
-        action="https://formspree.io/f/xeqwnbwj"
-        method="POST"
-        class="popins"
-      >
-        <label for="user-name" class="form-label">Your name</label>
-        <input
-          type="text"
-          class="form-control"
-          id="user-name"
-          maxlength="30"
-          placeholder="Anastasiia"
-          required
-          name="name"
-        />
-        <label for="email" class="form-label">Your email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          placeholder="anastasiia@gm..."
-          required
-          name="email"
-        />
-        <label for="user-message" class="form-label">Your message</label>
-        <textarea
-          class="form-control"
-          id="user-message"
-          rows="3"
-          maxlength="500"
-          placeholder="Enter your message here..."
-          required
-          name="message"
-        ></textarea>
-        <button class="g-btn popins" id="start-collab-btn">
-          start collabration
-        </button>
-      </form>
-    </section>
-
-    <!-- footor -->
-
-    <footer class="popins flex">
-      <button id="get-resume" class="flex">
-        <span>Get my Resume</span>
-        <img src="assets/images/download-up.svg" alt="" />
-      </button>
-      <ul class="flex">
-        <li class="social-icon">
-          <img src="assets/images/ic_stackoverflow.svg" alt="" />
-        </li>
-        <li class="social-icon">
-          <img src="assets/images/ic_github.svg" alt="" />
-        </li>
-        <li class="social-icon">
-          <img src="assets/images/ic_twitter.svg" alt="" />
-        </li>
-        <li class="social-icon">
-          <img src="assets/images/ic_linkedin.svg" alt="" />
-        </li>
-        <li class="social-icon">
-          <img src="assets/images/ic_medium.svg" alt="" />
-        </li>
-        <li class="social-icon">
-          <img src="assets/images/ic_angellist.svg" alt="" />
-        </li>
-      </ul>
-    </footer>
   </body>
 </html>
