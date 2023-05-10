@@ -431,7 +431,7 @@ footer {
   /* project section */
 
   #projects {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(6, 27rem);
   }
 
