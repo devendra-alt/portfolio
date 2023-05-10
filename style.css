@@ -81,9 +81,13 @@ html {
   background-color: #1a2236;
 }
 
+.project-head {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+}
+
 #project-title {
   text-transform: capitalize;
-  margin-bottom: 3.2rem;
   padding-left: 1.6rem;
 }
 
@@ -146,6 +150,10 @@ html {
   padding: 1.6rem;
   gap: 2rem;
   margin-bottom: 2.7rem;
+}
+
+.about > h3 {
+  margin-top: 4rem;
 }
 
 #about-me-details {
@@ -221,6 +229,10 @@ footer ul {
   color: #1a2236;
 }
 
+#get-started {
+  margin-top: 5rem;
+}
+
 .contact-t-img {
   margin-bottom: 3.2rem;
 }
@@ -290,7 +302,7 @@ input:hover {
 
 #projects {
   display: grid;
-  grid-template-rows: repeat(6, 1fr);
+  grid-template-rows: auto repeat(5, 1fr);
   grid-template-columns: 1fr;
   width: 100%;
 }
@@ -431,8 +443,68 @@ footer {
   /* project section */
 
   #projects {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(6, 27rem);
+    background-color: #fff;
+    /* display: grid; */
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 0.5fr 1fr 1.5fr 1.5fr;
+    grid-template-columns: 2.4fr 2fr 1.7fr 1fr 1fr;
+    grid-template-areas:
+      "project-title project-1 project-1 project-1 project-1"
+      "project-title project-1 project-1 project-1 project-1"
+      "project-title project-1 project-1 project-1 project-1"
+      "project-2     .      project-3 project-3 project-3"
+      "project-2     .      project-3 project-3 project-3"
+      "project-2     .      project-4 project-4 project-4"
+      "project-5     project-5 project-4 project-4 project-4"
+      "project-5     project-5 .      .      ."
+      ".          .      project-6 project-6 bg-4";
+  }
+
+  .project {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .project-img {
+    display: block;
+    width: 100%;
+  }
+
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: hsl(223, 35%, 16%, 0.6);
+  }
+
+  #project-title {
+    grid-area: project-title;
+  }
+
+  #project-1 {
+    grid-area: project-1;
+  }
+
+  #project-2 {
+    grid-area: project-2;
+  }
+
+  #project-3 {
+    grid-area: project-3;
+  }
+
+  #project-4 {
+    grid-area: project-4;
+  }
+
+  #project-5 {
+    grid-area: project-5;
+  }
+
+  #project-6 {
+    grid-area: project-6;
   }
 
   .project-head {
