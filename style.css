@@ -79,6 +79,10 @@ html {
   background-color: #1a2236;
 }
 
+.bg {
+  display: none;
+}
+
 .project-head {
   padding-top: 5rem;
   padding-bottom: 2.5rem;
@@ -97,6 +101,8 @@ html {
 .project-overlay {
   flex-direction: column;
   gap: 1.4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .project-overlay p {
@@ -131,7 +137,7 @@ html {
   background-color: #1a2236;
   color: #fff;
   align-items: center;
-  width: 53%;
+  width: 66%;
 }
 
 .project-btn:hover {
@@ -152,7 +158,7 @@ html {
 
 .about {
   flex-direction: column;
-  padding: 1.6rem;
+  padding: 3rem 1.6rem 3rem 1.6rem;
   gap: 2rem;
   margin-bottom: 2.7rem;
 }
@@ -166,12 +172,15 @@ html {
   font-size: 1.4rem;
   line-height: 2.1rem;
   color: #1a2236;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 #get-cv-btn {
   justify-content: center;
   align-items: center;
   gap: 1rem;
+  width: 100%;
 }
 
 .details-container {
@@ -259,8 +268,13 @@ footer ul {
 
 /* form */
 
+#contact-box {
+  flex-direction: column;
+}
+
 form {
   margin: 1.6rem;
+  flex-direction: column;
 }
 
 .form-label {
@@ -307,9 +321,8 @@ input:hover {
 
 #projects {
   display: grid;
-  grid-template-rows: auto repeat(5, 1fr);
+  grid-template-rows: auto repeat(6, 1fr);
   grid-template-columns: 1fr;
-  width: 100%;
 }
 
 .flex {
@@ -360,6 +373,17 @@ footer {
 /* Media Queries */
 
 @media screen and (min-width: 768px) {
+  /* general */
+
+  .title {
+    font-size: 9rem;
+    font-weight: 400;
+  }
+
+  .bg {
+    display: block;
+  }
+
   /* header section */
 
   header {
@@ -458,18 +482,20 @@ footer {
     grid-template-columns: 2.66fr 1fr 1fr 1fr 1.66fr 1fr;
     grid-template-areas:
       "project-title project-1 project-1 project-1 project-1 project-1"
-      "project-2     .         .         .         project-6 project-6"
-      "project-2     .         .         .         project-6 project-6"
-      "project-2     .         .         .         project-5 project-5"
+      "project-2     bg-1      bg-1      bg-1      project-6 project-6"
+      "project-2     bg-1      bg-1      bg-1      project-6 project-6"
+      "project-2     bg-1      bg-1      bg-1      project-5 project-5"
       "project-3     project-3 project-3 .         project-5 project-5"
       "project-3     project-3 project-3 .         .         ."
       ".             .         .         project-4 project-4 .";
+    margin-bottom: 20rem;
   }
 
   .project {
     width: 100%;
     height: 100%;
     position: relative;
+    background-color: #fff;
   }
 
   .project-img {
@@ -485,8 +511,6 @@ footer {
     bottom: 0;
     left: 0;
     right: 0;
-
-    /* top: 20rem; */
     width: 100%;
     height: 0;
     background: rgba(26, 34, 54, 0.95);
@@ -496,7 +520,7 @@ footer {
   }
 
   .project:hover .project-overlay {
-    height: 50%;
+    height: 75%;
     opacity: 1;
   }
 
@@ -506,6 +530,13 @@ footer {
 
   #project-2 {
     grid-area: project-2;
+    position: relative;
+  }
+
+  #project-2 .project-img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
   }
 
   #project-3 {
@@ -524,8 +555,18 @@ footer {
     grid-area: project-6;
   }
 
+  #bg-1 {
+    grid-area: bg-1;
+    background-image: url(assets/images/bg-1.svg);
+    background-size: 100% 100%;
+  }
+
   .project-head {
     padding-left: 10rem;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: top;
+    background-image: url(assets/images/image_dots.svg);
   }
 
   #project-title {
@@ -540,5 +581,76 @@ footer {
 
   .about {
     flex-direction: row-reverse;
+    padding: 10rem;
+    gap: 5rem;
+  }
+
+  #about-me {
+    padding: 5rem;
+  }
+
+  .details-container > ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  #get-cv-btn {
+    width: 50%;
+  }
+
+  #about-me-details {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  /* contact me section */
+
+  .contact-t-img {
+    display: none;
+  }
+
+  #contact-me {
+    background-image: url(assets/images/contact-bg.svg),
+      url(assets/images/image-geometry_7.svg);
+    background-repeat: no-repeat;
+    background-position-x: left, right;
+    background-position-y: top, bottom;
+    padding: 15rem;
+  }
+
+  #contact-box {
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+  }
+
+  #contact-intro {
+    text-align: left;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  .bt-form {
+    align-self: center;
+    justify-content: center;
+  }
+
+  form > * {
+    width: 100%;
+  }
+
+  /* footer */
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 16rem;
+    padding-right: 16rem;
+  }
+
+  footer > ul {
+    gap: 3rem;
   }
 }
