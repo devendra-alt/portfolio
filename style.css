@@ -239,6 +239,10 @@ footer ul {
   background-position: right bottom;
 }
 
+#about-me-bg {
+  display: none;
+}
+
 #contact-me {
   color: #1a2236;
 }
@@ -366,6 +370,15 @@ footer {
   cursor: pointer;
 }
 
+.social-icon {
+  cursor: pointer;
+}
+
+.social-icon:hover {
+  transition: all 0.7s ease-in;
+  transform: scale(1.3);
+}
+
 /* Page template A */
 
 /* Page template B */
@@ -382,6 +395,7 @@ footer {
 
   .bg {
     display: block;
+    background-size: 100% 100%;
   }
 
   /* header section */
@@ -433,6 +447,10 @@ footer {
     margin-bottom: 20rem;
   }
 
+  form > * {
+    width: 100%;
+  }
+
   .about > * {
     flex: 1;
   }
@@ -445,6 +463,7 @@ footer {
     display: block;
     background: url(assets/images/hero-main.svg);
     background-size: 100% 100%;
+    height: 75rem;
   }
 
   .hero-container {
@@ -486,8 +505,8 @@ footer {
       "project-2     bg-1      bg-1      bg-1      project-6 project-6"
       "project-2     bg-1      bg-1      bg-1      project-5 project-5"
       "project-3     project-3 project-3 .         project-5 project-5"
-      "project-3     project-3 project-3 .         .         ."
-      ".             .         .         project-4 project-4 .";
+      "project-3     project-3 project-3 bg-2      bg-2      bg-2"
+      "bg-3          bg-3      bg-3      project-4 project-4 .";
     margin-bottom: 20rem;
   }
 
@@ -561,6 +580,22 @@ footer {
     background-size: 100% 100%;
   }
 
+  #bg-2 {
+    grid-area: bg-2;
+    background-image: url(assets/images/bg-2.svg);
+  }
+
+  #bg-3 {
+    grid-area: bg-3;
+    background-image:
+      url(assets/images/bg-3.svg),
+      url(assets/images/bg-3_v2.svg);
+    background-repeat: no-repeat, no-repeat;
+    background-position-x: left, right;
+    background-position-y: top, top;
+    background-size: 50% 50%, 50% 50%;
+  }
+
   .project-head {
     padding-left: 10rem;
     background-repeat: no-repeat;
@@ -589,10 +624,17 @@ footer {
     padding: 5rem;
   }
 
+  footer > ul {
+    gap: 3rem;
+  }
+
   .details-container > ul {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .card {
+    flex: 1;
   }
 
   #get-cv-btn {
@@ -604,6 +646,14 @@ footer {
     margin-bottom: 3rem;
   }
 
+  #about-me-bg {
+    background-image: url(assets/images/image_dots_with_teal.svg);
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+    background-size: 70% 70%;
+  }
+
   /* contact me section */
 
   .contact-t-img {
@@ -611,7 +661,8 @@ footer {
   }
 
   #contact-me {
-    background-image: url(assets/images/contact-bg.svg),
+    background-image:
+      url(assets/images/contact-bg.svg),
       url(assets/images/image-geometry_7.svg);
     background-repeat: no-repeat;
     background-position-x: left, right;
@@ -638,19 +689,11 @@ footer {
     justify-content: center;
   }
 
-  form > * {
-    width: 100%;
-  }
-
   /* footer */
   footer {
     flex-direction: row;
     justify-content: space-between;
     padding-left: 16rem;
     padding-right: 16rem;
-  }
-
-  footer > ul {
-    gap: 3rem;
   }
 }
