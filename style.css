@@ -239,6 +239,10 @@ footer ul {
   background-position: right bottom;
 }
 
+#about-me-bg {
+  display: none;
+}
+
 #contact-me {
   color: #1a2236;
 }
@@ -443,6 +447,10 @@ footer {
     margin-bottom: 20rem;
   }
 
+  form > * {
+    width: 100%;
+  }
+
   .about > * {
     flex: 1;
   }
@@ -615,6 +623,10 @@ footer {
     padding: 5rem;
   }
 
+  footer > ul {
+    gap: 3rem;
+  }
+
   .details-container > ul {
     display: flex;
     flex-wrap: wrap;
@@ -675,19 +687,11 @@ footer {
     justify-content: center;
   }
 
-  form > * {
-    width: 100%;
-  }
-
   /* footer */
   footer {
     flex-direction: row;
     justify-content: space-between;
     padding-left: 16rem;
     padding-right: 16rem;
-  }
-
-  footer > ul {
-    gap: 3rem;
   }
 }
