@@ -596,7 +596,8 @@ footer {
 
   #bg-3 {
     grid-area: bg-3;
-    background-image: url(assets/images/bg-3.svg),
+    background-image:
+      url(assets/images/bg-3.svg),
       url(assets/images/bg-3_v2.svg);
     background-repeat: no-repeat, no-repeat;
     background-position-x: left, right;
@@ -625,6 +626,7 @@ footer {
   .about {
     flex-direction: row-reverse;
     padding: 10rem;
+
     /* gap: 2rem; */
   }
 
@@ -670,7 +672,8 @@ footer {
   }
 
   #contact-me {
-    background-image: url(assets/images/contact-bg.svg),
+    background-image:
+      url(assets/images/contact-bg.svg),
       url(assets/images/image-geometry_7.svg);
     background-repeat: no-repeat;
     background-position-x: left, right;
@@ -718,6 +721,7 @@ footer {
   #contact-me form {
     min-width: 70%;
   }
+
   .card {
     min-width: 25rem;
   }
