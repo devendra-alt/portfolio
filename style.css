@@ -61,7 +61,7 @@ html {
   border: 1px solid #000;
   background-color: #fff;
   color: #000;
-  transition: ease-in 0.5s;
+  transition: ease-in 0.6s;
 }
 
 .g-btn:active {
@@ -73,6 +73,8 @@ html {
 #start-collab-btn {
   width: 100%;
 }
+
+/* projects section */
 
 .project {
   color: #fff;
@@ -156,6 +158,8 @@ html {
   padding-right: 1rem;
 }
 
+/* about section */
+
 .about {
   flex-direction: column;
   padding: 3rem 1.6rem 3rem 1.6rem;
@@ -187,6 +191,8 @@ html {
   color: #fff;
 }
 
+/* linter stylelint fix (should belong to footer section) */
+
 footer ul {
   text-align: center;
   justify-content: space-between;
@@ -200,7 +206,6 @@ footer ul {
 }
 
 .card {
-  min-width: 30rem;
   padding: 4rem;
   list-style: none;
   height: 289px;
@@ -208,13 +213,14 @@ footer ul {
 
 .card h5 {
   font-size: 2rem;
-  padding: 2rem;
+  margin-bottom: 1.2rem;
 }
 
 .list-i {
   font-size: 1.8rem;
   font-weight: 600;
   list-style-type: disc;
+  margin-left: 2rem;
 }
 
 #langs {
@@ -395,6 +401,10 @@ footer {
   .bg {
     display: block;
     background-size: 100% 100%;
+  }
+
+  .bg:hover {
+    transform: scale(1.01);
   }
 
   /* header section */
@@ -615,7 +625,7 @@ footer {
   .about {
     flex-direction: row-reverse;
     padding: 10rem;
-    gap: 5rem;
+    /* gap: 2rem; */
   }
 
   #about-me {
@@ -696,10 +706,19 @@ footer {
   #hero h1 {
     font-size: 7rem;
   }
+
   #start-collab-btn {
     width: 80%;
   }
+
+  #contact-box {
+    width: 65%;
+  }
+
   #contact-me form {
     min-width: 70%;
+  }
+  .card {
+    min-width: 25rem;
   }
 }
