@@ -200,22 +200,21 @@ footer ul {
 }
 
 .card {
-  padding-left: 4rem;
+  min-width: 30rem;
+  padding: 4rem;
   list-style: none;
   height: 289px;
 }
 
 .card h5 {
   font-size: 2rem;
-  margin-bottom: 2.1rem;
-  padding-top: 4rem;
+  padding: 2rem;
 }
 
 .list-i {
   font-size: 1.8rem;
   font-weight: 600;
   list-style-type: disc;
-  margin-left: 2rem;
 }
 
 #langs {
@@ -463,11 +462,11 @@ footer {
     display: block;
     background: url(assets/images/hero-main.svg);
     background-size: 100% 100%;
-    height: 75rem;
+    min-height: 75rem;
   }
 
   .hero-container {
-    height: 75rem;
+    min-height: 75rem;
     padding-left: 10rem;
     padding-right: 5rem;
     flex-direction: column;
@@ -690,5 +689,17 @@ footer {
     justify-content: space-between;
     padding-left: 16rem;
     padding-right: 16rem;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #hero h1 {
+    font-size: 7rem;
+  }
+  #start-collab-btn {
+    width: 80%;
+  }
+  #contact-me form {
+    min-width: 70%;
   }
 }
