@@ -103,7 +103,7 @@ Use <a href="">live server </a>vs code extension to launch the project on your b
 To run linter check locally, run the following command:
 
 ```
-  npx hint .
+  npx stylelint --fix "**/*.css"
 ```
 
 <!--
@@ -146,9 +146,17 @@ Example:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **adding contact us form**
-- [ ] **making website responsive to desktop**
-- [ ] **adding footer**
+- [ ] **adding portfolio page**
+- [ ] **adding contact-me page**
+- [ ] **adding about page**
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- LIVE DEMO -->
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://devendra-alt.github.io/portfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
