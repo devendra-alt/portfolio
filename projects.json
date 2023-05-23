@@ -1,0 +1,94 @@
+{
+  "projects": [
+    {
+      "id": "project-1",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-01"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    },
+    {
+      "id": "project-2",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-02"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    },
+    {
+      "id": "project-3",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-03"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    },
+    {
+      "id": "project-4",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-04"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    },
+    {
+      "id": "project-5",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-05"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    },
+    {
+      "id": "project-6",
+      "name": "Project name goes here",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "featured_images": [
+        "project-06"
+      ],
+      "technologies": [
+        "HTML/CSS",
+        "Ruby on Rails",
+        "Javascript"
+      ],
+      "live-link": "",
+      "source-link": ""
+    }
+  ]
+}
