@@ -39,7 +39,7 @@ html {
 .project-content {
   flex-direction: column;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 7rem auto 5rem auto;
   padding-right: 2rem;
   padding-left: 2rem;
@@ -49,18 +49,20 @@ html {
   font-weight: 700;
   color: #1a2236;
   font-size: 2rem;
-  line-height: 1.6rem;
 }
 
 #popup-tech-ul {
   padding-left: 0;
-  gap: 1.2rem;
+  gap: 2%;
 }
 
 #popup-tech-ul > li {
   background-color: #fff;
   color: #1a2236;
   border: 0.516669px solid #1a2236;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .popup-project-desc {
   font-size: 1.8rem;
@@ -83,6 +85,11 @@ html {
   margin-top: 2.2rem;
 }
 
+.pop-util-btn:hover {
+  background: #1a2236;
+  color: #fff;
+}
+
 .pop-util-btn > img {
   position: absolute;
   top: 1rem;
@@ -94,6 +101,10 @@ html {
   gap: 2.5rem;
   padding: 1.6rem;
   font-weight: 400;
+}
+
+.pop-btn-freg {
+  flex-direction: column;
 }
 
 .hero-main {
@@ -584,6 +595,44 @@ footer {
 
   .l-t-img {
     display: none;
+  }
+
+  /* popup */
+  .project-popup {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .project-content {
+    gap: 5rem;
+  }
+
+  .popup-project-title {
+    font-size: 6rem;
+  }
+
+  #popup-tech-ul > li {
+    font-size: 1.6rem;
+    padding: 2rem;
+  }
+
+  .popup-project-desc {
+    padding-left: 22rem;
+    padding-right: 22rem;
+  }
+
+  .pop-util-btn {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin: 0;
+  }
+
+  .pop-btn-freg {
+    flex-direction: row;
+    gap: 5rem;
+    margin: 0;
+    padding-left: 22rem;
+    padding-right: 22rem;
   }
 
   /* hero section */

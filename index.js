@@ -56,7 +56,7 @@ const btnStack = (project) => {
   liveBtn.className = 'pop-util-btn';
 
   const liveBtnImg = document.createElement('img');
-  liveBtnImg.src = 'assets/images/ic_link.svg';
+  liveBtnImg.src = 'assets/images/ic_link.png';
   liveBtn.textContent = 'See Live';
   liveBtn.appendChild(liveBtnImg);
 
@@ -64,11 +64,12 @@ const btnStack = (project) => {
   sourceBtn.className = 'pop-util-btn';
 
   const sourceBtnImg = document.createElement('img');
-  sourceBtnImg.src = 'assets/images/Group.svg';
+  sourceBtnImg.src = 'assets/images/Group.png';
   sourceBtn.textContent = 'See Source';
   sourceBtn.appendChild(sourceBtnImg);
 
-  const btnfregment = document.createDocumentFragment();
+  const btnfregment = document.createElement('div');
+  btnfregment.classList.add('pop-btn-freg', 'flex');
   btnfregment.appendChild(liveBtn);
   btnfregment.appendChild(sourceBtn);
 
@@ -82,13 +83,16 @@ const createPopUpContent = (projectBtn) => {
 
   const TextContent = popUpTextContent(project);
   const popUpProjectTechUl = createProjectTechStack(project);
+  const popUpProjectTechUlDiv = document.createElement('div');
+  popUpProjectTechUlDiv.className = 'popup-tech-container';
+  popUpProjectTechUlDiv.appendChild(popUpProjectTechUl);
   popUpProjectTechUl.id = 'popup-tech-ul';
   popUpProjectTechUl.classList.add('flex');
 
   const contentFreg = document.createDocumentFragment();
 
   contentFreg.appendChild(TextContent[0]);
-  contentFreg.appendChild(popUpProjectTechUl);
+  contentFreg.appendChild(popUpProjectTechUlDiv);
   contentFreg.appendChild(popUpImgGallery(project));
   contentFreg.appendChild(TextContent[1]);
   contentFreg.appendChild(btnStack());
@@ -169,7 +173,9 @@ const createProjectTechStack = (project) => {
   for (let i = 0; i < project.technologies.length; i += 1) {
     const liEl = document.createElement('li');
     liEl.className = 'project-lang';
-    liEl.textContent = `${project.technologies[i]}`;
+    const spanEl = document.createElement('span');
+    spanEl.textContent = `${project.technologies[i]}`;
+    liEl.appendChild(spanEl);
     ulEl.appendChild(liEl);
   }
   return ulEl;
