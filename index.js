@@ -1,7 +1,3 @@
-// project section
-
-const projectsEl = document.querySelector('#projects');
-
 // mobile menu
 
 const mobileMenu = document.querySelector('.mobile-nav');
@@ -21,14 +17,29 @@ closeBtn.addEventListener('click', () => {
   mobileMenu.classList.toggle('open-menu');
 });
 
+const projectsEl = document.querySelector('#projects');
+
+//popup section
+
+const createPopUp = () => {
+  const projectBtns = document.querySelectorAll('.project-btn');
+  projectBtns.forEach((projectBtn) => {
+    projectBtn.addEventListener('click', () => {
+      
+    });
+  });
+};
+
 // project section
 
-const createProjectBtn = () => {
+const createProjectBtn = (project) => {
   const projectBtnEl = document.createElement('button');
   const spanEl = document.createElement('span');
   const imgEl = document.createElement('img');
 
   projectBtnEl.classList.add('project-btn', 'flex');
+  projectBtnEl.id = project.id;
+
   spanEl.textContent = 'See this project';
 
   imgEl.src = 'assets/images/right-arrow.svg';
@@ -71,7 +82,7 @@ const createProjectOverlay = (project) => {
 
   projectOverlayEl.appendChild(projectNameEl);
   projectOverlayEl.appendChild(createProjectTechStack(project));
-  projectOverlayEl.appendChild(createProjectBtn());
+  projectOverlayEl.appendChild(createProjectBtn(project));
 
   return projectOverlayEl;
 };
@@ -94,6 +105,7 @@ const loadProjects = () => {
       projectArray.forEach((project) => {
         projectsEl.appendChild(createProject(project));
       });
+      createPopUp();
     })
     .catch(() => {
       // console.error('Error:', error);
