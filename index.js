@@ -54,11 +54,12 @@ const popUpTextContent = (project) => {
 const btnStack = (project) => {
   const liveBtn = document.createElement('button');
   liveBtn.className = 'pop-util-btn';
-
+  const btnContnier= document.createElement('div');
   const liveBtnImg = document.createElement('img');
   liveBtnImg.src = 'assets/images/ic_link.png';
+  btnContnier.appendChild(liveBtnImg);
   liveBtn.textContent = 'See Live';
-  liveBtn.appendChild(liveBtnImg);
+  liveBtn.appendChild(btnContnier);
 
   const sourceBtn = document.createElement('button');
   sourceBtn.className = 'pop-util-btn';
