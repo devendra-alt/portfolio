@@ -23,41 +23,77 @@ const projectsEl = document.querySelector('#projects');
 
 //popup section
 
-function getProjectById(id) {
+const getProjectById = (id) => {
   for (let i = 0; i < projectData.length; i++) {
     if (projectData[i].id === id) {
       return projectData[i];
     }
   }
   return null;
-}
+};
 
-const createPopUpContent = (projectBtn) => {
-  const project = getProjectById(projectBtn.id);
-
-  const projectDiv = document.createElement('div');
-  projectDiv.classList.add('project-content', 'flex');
-
+const popUpImgGallery = (project) => {
   const projectImg = document.createElement('img');
   const projectImgSrc = `assets/images/${project.featured_images[0]}.svg`;
   projectImg.src = projectImgSrc;
+  return projectImg;
+};
 
+const popUpTextContent = (project) => {
   const projectName = document.createElement('h2');
   projectName.textContent = `${project.name}`;
   projectName.classList.add('popup-project-title');
-
   const projectContent = document.createElement('p');
   const p1 = project.description.slice(0, 195);
   const p2 = project.description.slice(196, -1);
   projectContent.innerHTML = `${p1} <br><br> ${p2}`;
   projectContent.className = 'popup-project-desc';
+  return [projectName, projectContent];
+};
 
-  projectDiv.appendChild(projectName);
+const btnStack = (project) => {
+  const liveBtn = document.createElement('button');
+  liveBtn.className = 'pop-util-btn';
+
+  const liveBtnImg = document.createElement('img');
+  liveBtnImg.src = 'assets/images/ic_link.svg';
+  liveBtn.textContent = 'See Live';
+  liveBtn.appendChild(liveBtnImg);
+
+  const sourceBtn = document.createElement('button');
+  sourceBtn.className = 'pop-util-btn';
+
+  const sourceBtnImg = document.createElement('img');
+  sourceBtnImg.src = 'assets/images/Group.svg';
+  sourceBtn.textContent = 'See Source';
+  sourceBtn.appendChild(sourceBtnImg);
+
+  const btnfregment = document.createDocumentFragment();
+  btnfregment.appendChild(liveBtn);
+  btnfregment.appendChild(sourceBtn);
+
+  return btnfregment;
+};
+
+const createPopUpContent = (projectBtn) => {
+  const project = getProjectById(projectBtn.id);
+  const projectDiv = document.createElement('div');
+  projectDiv.classList.add('project-content', 'flex');
+
+  const TextContent = popUpTextContent(project);
   const popUpProjectTechUl = createProjectTechStack(project);
   popUpProjectTechUl.id = 'popup-tech-ul';
-  projectDiv.appendChild(popUpProjectTechUl);
-  projectDiv.appendChild(projectImg);
-  projectDiv.appendChild(projectContent);
+  popUpProjectTechUl.classList.add('flex');
+
+  const contentFreg = document.createDocumentFragment();
+
+  contentFreg.appendChild(TextContent[0]);
+  contentFreg.appendChild(popUpProjectTechUl);
+  contentFreg.appendChild(popUpImgGallery(project));
+  contentFreg.appendChild(TextContent[1]);
+  contentFreg.appendChild(btnStack());
+
+  projectDiv.appendChild(contentFreg);
 
   return projectDiv;
 };
@@ -84,9 +120,13 @@ const createPopUp = () => {
 
       const cross = projectPopUp.firstChild;
       cross.classList.add('cross-div');
-
       const body = document.querySelector('body');
       body.appendChild(projectPopUp);
+
+      const projectCloseBtn = document.querySelector('.cross-div > img');
+      projectCloseBtn.addEventListener('click', () => {
+        document.querySelector('body').removeChild(projectPopUp);
+      });
     });
   });
 };

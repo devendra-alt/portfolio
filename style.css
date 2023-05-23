@@ -40,7 +40,7 @@ html {
   flex-direction: column;
   justify-content: center;
   gap: 2rem;
-  margin: 5rem auto 5rem auto;
+  margin: 7rem auto 5rem auto;
   padding-right: 2rem;
   padding-left: 2rem;
 }
@@ -54,6 +54,7 @@ html {
 
 #popup-tech-ul {
   padding-left: 0;
+  gap: 1.2rem;
 }
 
 #popup-tech-ul > li {
@@ -67,7 +68,28 @@ html {
   line-height: 2.7rem;
 }
 
-#hero {
+.pop-util-btn {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #1a2236;
+  cursor: pointer;
+  margin-top: 2.2rem;
+}
+
+.pop-util-btn > img {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.pop-source-btn #hero {
   flex-direction: column;
   gap: 2.5rem;
   padding: 1.6rem;
