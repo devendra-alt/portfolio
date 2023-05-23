@@ -90,18 +90,18 @@ html {
   color: #fff;
 }
 
-.pop-btn-container {
+.pop-util-btn > img,
+.pop-util-btn > svg {
   position: absolute;
   top: 1rem;
   right: 2rem;
 }
 
-.pop-btn-container {
-  display: inline-block;
-  z-index: 2;
+.bottom-slide {
+  display: none;
 }
 
-.pop-source-btn #hero {
+#hero {
   flex-direction: column;
   gap: 2.5rem;
   padding: 1.6rem;
@@ -622,8 +622,8 @@ footer {
   }
 
   .popup-project-desc {
-    padding-left: 22rem;
-    padding-right: 22rem;
+    margin-left: 22rem;
+    margin-right: 22rem;
   }
 
   .pop-util-btn {
@@ -640,6 +640,20 @@ footer {
     padding-right: 22rem;
   }
 
+  .slide-btns {
+    justify-content: space-between;
+    margin-left: 20%;
+    margin-right: 20%;
+  }
+
+  .bottom-slide {
+    display: block;
+    border: none;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+  }
   /* hero section */
 
   #hero {
@@ -916,5 +930,9 @@ footer {
 
   .card {
     min-width: 25rem;
+  }
+  .popup-project-desc {
+    margin-left: 10%;
+    margin-right: 10%;
   }
 }
