@@ -90,10 +90,15 @@ html {
   color: #fff;
 }
 
-.pop-util-btn > img {
+.pop-btn-container {
   position: absolute;
   top: 1rem;
   right: 2rem;
+}
+
+.pop-btn-container {
+  display: inline-block;
+  z-index: 2;
 }
 
 .pop-source-btn #hero {
