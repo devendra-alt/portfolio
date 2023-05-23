@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio:Devendra Mulewa</title>
-
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,29 +16,28 @@
   <body>
     <!-- header section -->
     <header class="flex">
+      <!-- mobile nav -->
+      <nav class="mobile-nav popins">
+        <div class="above-bg">
+          <img src="assets/images/Union.svg" id="menu-i-close" alt="" />
+        </div>
+        <ul class="mobile-nav-links">
+          <li><a href="#hero" class="mobile-nav-link">Hello</a></li>
+          <li><a href="#projects" class="mobile-nav-link">Portfolio</a></li>
+          <li><a href="#about" class="mobile-nav-link">About</a></li>
+          <li><a href="#contact-me" class="mobile-nav-link">Contact</a></li>
+        </ul>
+      </nav>
+      <!-- mobile nav end -->
       <img src="./assets/images/image_geometry_1.svg" alt="" class="l-t-img" />
       <nav class="nav">
         <ul class="nav-links popins">
-          <li><a href="" class="nav-link">Hello</a></li>
-          <li><a href="" class="nav-link">Portfolio</a></li>
-          <li><a href="" class="nav-link">About</a></li>
-          <li><a href="" class="nav-link">Contact</a></li>
+          <li><a href="#hero" class="nav-link">Hello</a></li>
+          <li><a href="#projects" class="nav-link">Portfolio</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#contact-me" class="nav-link">Contact</a></li>
         </ul>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke-width="1.5"
-          stroke="currentColor"
-          class="w-6 h-6"
-          id="menu-i"
-        >
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-          />
-        </svg>
+        <img src="assets/images/ic_menu.svg" id="menu-i" alt="" />
       </nav>
     </header>
 
@@ -228,7 +226,7 @@
     </section>
 
     <!-- about me section -->
-    <section class="about flex">
+    <section class="about flex" id="about">
       <div id="about-me">
         <h3 class="title popins">About</h3>
         <p id="about-me-details" class="popins">
@@ -367,5 +365,6 @@
         </li>
       </ul>
     </footer>
+    <script src="index.js"></script>
   </body>
 </html>
