@@ -1,11 +1,13 @@
+// global
+
+let projectData = [];
+
 // mobile menu
 
 const mobileMenu = document.querySelector('.mobile-nav');
 const menuItems = document.querySelectorAll('.mobile-nav ul li');
 const menuBtn = document.getElementById('menu-i');
 const closeBtn = document.getElementById('menu-i-close');
-
-// mobile menu
 
 menuItems.forEach((el) => {
   el.addEventListener('click', () => mobileMenu.classList.toggle('open-menu'));
@@ -21,11 +23,70 @@ const projectsEl = document.querySelector('#projects');
 
 //popup section
 
+function getProjectById(id) {
+  for (let i = 0; i < projectData.length; i++) {
+    if (projectData[i].id === id) {
+      return projectData[i];
+    }
+  }
+  return null;
+}
+
+const createPopUpContent = (projectBtn) => {
+  const project = getProjectById(projectBtn.id);
+
+  const projectDiv = document.createElement('div');
+  projectDiv.classList.add('project-content', 'flex');
+
+  const projectImg = document.createElement('img');
+  const projectImgSrc = `assets/images/${project.featured_images[0]}.svg`;
+  projectImg.src = projectImgSrc;
+
+  const projectName = document.createElement('h2');
+  projectName.textContent = `${project.name}`;
+  projectName.classList.add('popup-project-title');
+
+  const projectContent = document.createElement('p');
+  const p1 = project.description.slice(0, 195);
+  const p2 = project.description.slice(196, -1);
+  projectContent.innerHTML = `${p1} <br><br> ${p2}`;
+  projectContent.className = 'popup-project-desc';
+
+  projectDiv.appendChild(projectName);
+  const popUpProjectTechUl = createProjectTechStack(project);
+  popUpProjectTechUl.id = 'popup-tech-ul';
+  projectDiv.appendChild(popUpProjectTechUl);
+  projectDiv.appendChild(projectImg);
+  projectDiv.appendChild(projectContent);
+
+  return projectDiv;
+};
+
+const createPopUpCloseBtn = () => {
+  const popUpCloseBtn = `<div>
+  <img
+    src="assets/images/Union.svg"
+    alt="mobile-menu close btn"
+  />
+  </div>`;
+  return popUpCloseBtn;
+};
+
 const createPopUp = () => {
   const projectBtns = document.querySelectorAll('.project-btn');
   projectBtns.forEach((projectBtn) => {
     projectBtn.addEventListener('click', () => {
-      
+      const projectPopUp = document.createElement('div');
+      projectPopUp.classList.add('project-popup', 'popins');
+
+      projectPopUp.innerHTML += createPopUpCloseBtn();
+      projectPopUp.appendChild(createPopUpContent(projectBtn));
+
+      const cross = projectPopUp.firstChild;
+      cross.classList.add('cross-div');
+
+      const body = document.querySelector('body');
+      body.appendChild(projectPopUp);
     });
   });
 };
@@ -80,9 +141,13 @@ const createProjectOverlay = (project) => {
   const projectNameEl = document.createElement('p');
   projectNameEl.textContent = `${project.name}`;
 
-  projectOverlayEl.appendChild(projectNameEl);
-  projectOverlayEl.appendChild(createProjectTechStack(project));
-  projectOverlayEl.appendChild(createProjectBtn(project));
+  const projectOverlayfreg = document.createDocumentFragment();
+
+  projectOverlayfreg.appendChild(projectNameEl);
+  projectOverlayfreg.appendChild(createProjectTechStack(project));
+  projectOverlayfreg.appendChild(createProjectBtn(project));
+
+  projectOverlayEl.appendChild(projectOverlayfreg);
 
   return projectOverlayEl;
 };
@@ -102,6 +167,7 @@ const loadProjects = () => {
     .then((response) => response.json())
     .then((data) => {
       const projectArray = data.projects;
+      projectData = data.projects;
       projectArray.forEach((project) => {
         projectsEl.appendChild(createProject(project));
       });
