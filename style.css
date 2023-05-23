@@ -369,7 +369,8 @@ header {
 .open-menu {
   background-color: #fff;
   height: 100vh;
-  background-image: url(assets/images/img_g1_mobile_menu.svg),
+  background-image:
+    url(assets/images/img_g1_mobile_menu.svg),
     url(assets/images/img_g1_mobile_menu_b.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
@@ -388,14 +389,14 @@ header {
   margin-top: 14.4rem;
 }
 
-.mobile-nav-links a:link,
-a:visited {
+.mobile-nav-link:link,
+.mobile-nav-link:visited {
   color: #1a2236;
   text-decoration: none;
 }
 
-.mobile-nav-links a:hover,
-a:active {
+.mobile-nav-link:hover,
+.mobile-nav-link:active {
   text-decoration: #1a2236 underline;
 }
 
@@ -661,7 +662,8 @@ footer {
 
   #bg-3 {
     grid-area: bg-3;
-    background-image: url(assets/images/bg-3.svg),
+    background-image:
+      url(assets/images/bg-3.svg),
       url(assets/images/bg-3_v2.svg);
     background-repeat: no-repeat, no-repeat;
     background-position-x: left, right;
@@ -736,7 +738,8 @@ footer {
   }
 
   #contact-me {
-    background-image: url(assets/images/contact-bg.svg),
+    background-image:
+      url(assets/images/contact-bg.svg),
       url(assets/images/image-geometry_7.svg);
     background-repeat: no-repeat;
     background-position-x: left, right;
