@@ -33,10 +33,35 @@ const getProjectById = (id) => {
 };
 
 const popUpImgGallery = (project) => {
+  const projectDiv = document.createElement('div');
+  projectDiv.classList.add('popUpImgGallery');
+
+  const mainImg = document.createElement('div');
+  mainImg.id = 'main';
   const projectImg = document.createElement('img');
   const projectImgSrc = `assets/images/${project.featured_images[0]}.svg`;
   projectImg.src = projectImgSrc;
-  return projectImg;
+  mainImg.appendChild(projectImg);
+  projectDiv.appendChild(mainImg);
+
+  let activeImg = null;
+
+  for (let i = 0; i < project.featured_images.length; i++) {
+    const childImg = document.createElement('img');
+    childImg.src = `assets/images/${project.featured_images[i]}.svg`;
+    childImg.id = `img-${i + 1}`;
+    childImg.addEventListener('click', () => {
+      if (activeImg !== null) {
+        activeImg.classList.remove('selected-img');
+      }
+      projectImg.src = childImg.src;
+      childImg.classList.add('selected-img');
+      activeImg = childImg;
+    });
+    projectDiv.appendChild(childImg);
+  }
+
+  return projectDiv;
 };
 
 const popUpTextContent = (project) => {
@@ -51,7 +76,14 @@ const popUpTextContent = (project) => {
   return [projectName, projectContent];
 };
 
-const prevNextBtn = () => {
+let idNumber = (str) => {
+  let arr = str.split('');
+  let idNo = arr[arr.length - 1];
+  let r_val = parseInt(idNo);
+  return r_val;
+};
+
+const prevNextBtn = (projectId) => {
   const prevBtn = document.createElement('button');
   const nextBtn = document.createElement('button');
 
@@ -68,11 +100,29 @@ const prevNextBtn = () => {
   <p>Next project</p>
   `;
 
+  prevBtn.addEventListener('click', () => {
+    let IdNo = idNumber(projectId);
+    let preProject = getProjectById(`project-${IdNo - 1}`);
+    if (preProject !== null) {
+      projectCreater(preProject);
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    let IdNo = idNumber(projectId);
+    let nextProject = getProjectById(`project-${IdNo + 1}`);
+    if (nextProject !== null) {
+      projectCreater(nextProject);
+    }
+  });
+
   const slideBtns = document.createElement('div');
-  slideBtns.classList.add('slide-btns', 'flex');
+  slideBtns.classList.add('slide-btns');
 
   slideBtns.appendChild(prevBtn);
   slideBtns.appendChild(nextBtn);
+
+  prevBtn;
 
   return slideBtns;
 };
@@ -133,7 +183,7 @@ const createPopUpContent = (projectBtn) => {
   contentFreg.appendChild(popUpImgGallery(project));
   contentFreg.appendChild(TextContent[1]);
   contentFreg.appendChild(btnStack());
-  contentFreg.appendChild(prevNextBtn());
+  contentFreg.appendChild(prevNextBtn(projectBtn.id));
 
   projectDiv.appendChild(contentFreg);
 
@@ -150,25 +200,29 @@ const createPopUpCloseBtn = () => {
   return popUpCloseBtn;
 };
 
+const projectCreater = (projectBtn) => {
+  const projectPopUp = document.createElement('div');
+  projectPopUp.classList.add('project-popup', 'popins');
+
+  projectPopUp.innerHTML += createPopUpCloseBtn();
+  projectPopUp.appendChild(createPopUpContent(projectBtn));
+
+  const cross = projectPopUp.firstChild;
+  cross.classList.add('cross-div');
+  const body = document.querySelector('body');
+  body.appendChild(projectPopUp);
+
+  const projectCloseBtn = document.querySelector('.cross-div > img');
+  projectCloseBtn.addEventListener('click', () => {
+    document.querySelector('body').removeChild(projectPopUp);
+  });
+};
+
 const createPopUp = () => {
   const projectBtns = document.querySelectorAll('.project-btn');
   projectBtns.forEach((projectBtn) => {
     projectBtn.addEventListener('click', () => {
-      const projectPopUp = document.createElement('div');
-      projectPopUp.classList.add('project-popup', 'popins');
-
-      projectPopUp.innerHTML += createPopUpCloseBtn();
-      projectPopUp.appendChild(createPopUpContent(projectBtn));
-
-      const cross = projectPopUp.firstChild;
-      cross.classList.add('cross-div');
-      const body = document.querySelector('body');
-      body.appendChild(projectPopUp);
-
-      const projectCloseBtn = document.querySelector('.cross-div > img');
-      projectCloseBtn.addEventListener('click', () => {
-        document.querySelector('body').removeChild(projectPopUp);
-      });
+      projectCreater(projectBtn);
     });
   });
 };

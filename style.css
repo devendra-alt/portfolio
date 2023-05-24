@@ -97,19 +97,75 @@ html {
   right: 2rem;
 }
 
-.bottom-slide {
+.slide-btns {
   display: none;
 }
+
+.pop-btn-freg {
+  flex-direction: column;
+}
+
+/* popup image gallery */
+
+.popUpImgGallery {
+  display: grid;
+  grid-template-rows: 20% 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 1fr 1fr 1fr;
+  grid-template-areas:
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'img-1 img-2 img-3 img-4';
+  flex: 1;
+  overflow: auto;
+}
+
+.popUpImgGallery > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#main {
+  grid-area: main;
+}
+
+#img-1 {
+  grid-area: img-1;
+}
+
+#img-2 {
+  grid-area: img-2;
+}
+
+#img-3 {
+  grid-area: img-3;
+}
+
+#img-4 {
+  grid-area: img-4;
+}
+
+#main > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-img {
+  border: 0.1rem solid #1a2236;
+}
+
+/* popup ends */
 
 #hero {
   flex-direction: column;
   gap: 2.5rem;
   padding: 1.6rem;
   font-weight: 400;
-}
-
-.pop-btn-freg {
-  flex-direction: column;
 }
 
 .hero-main {
@@ -621,11 +677,6 @@ footer {
     padding: 2rem;
   }
 
-  .popup-project-desc {
-    margin-left: 22rem;
-    margin-right: 22rem;
-  }
-
   .pop-util-btn {
     padding-left: 7rem;
     padding-right: 7rem;
@@ -635,25 +686,35 @@ footer {
   .pop-btn-freg {
     flex-direction: row;
     gap: 5rem;
-    margin: 0;
-    padding-left: 22rem;
-    padding-right: 22rem;
   }
 
   .slide-btns {
+    display: flex;
     justify-content: space-between;
-    margin-left: 20%;
-    margin-right: 20%;
+  }
+
+  .pop-btn-freg,
+  .slide-btns,
+  .popup-project-desc {
+    margin-left: 22rem;
+    margin-right: 22rem;
   }
 
   .bottom-slide {
-    display: block;
     border: none;
     background-color: #fff;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 1rem;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1.8rem;
   }
+
+  .bottom-slide:last-child {
+    flex-direction: row-reverse;
+  }
+
   /* hero section */
 
   #hero {
@@ -931,7 +992,9 @@ footer {
   .card {
     min-width: 25rem;
   }
-  .popup-project-desc {
+  .popup-project-desc,
+  .pop-btn-freg,
+  .slide-btns {
     margin-left: 10%;
     margin-right: 10%;
   }
