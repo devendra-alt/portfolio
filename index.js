@@ -2,6 +2,8 @@
 
 let projectData = [];
 
+let currentProject = null;
+
 // mobile menu
 
 const mobileMenu = document.querySelector('.mobile-nav');
@@ -203,6 +205,7 @@ const projectCreater = (projectBtn) => {
   const body = document.querySelector('body');
   body.appendChild(projectPopUp);
 
+  
   const id = idNumber(projectBtn.id);
   const prevBtn = document.querySelector('.b-1');
   prevBtn.addEventListener('click', () => {
@@ -217,7 +220,7 @@ const projectCreater = (projectBtn) => {
     const parentElement = oldElement.parentNode;
     parentElement.replaceChild(
       createPopUpContent(`project-${id + 1}`),
-      oldElement,
+      oldElement
     );
   });
 
@@ -232,6 +235,7 @@ const createPopUp = () => {
   projectBtns.forEach((projectBtn) => {
     projectBtn.addEventListener('click', () => {
       projectCreater(projectBtn);
+      let currentProject = projectBtn.id;
     });
   });
 };
