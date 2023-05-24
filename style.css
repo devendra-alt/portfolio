@@ -108,7 +108,6 @@ html {
 }
 
 /* popup image gallery */
-
 .popUpImgGallery {
   display: grid;
   grid-template-rows: 20% 1fr 1fr 1fr 1fr;
@@ -166,7 +165,6 @@ html {
 }
 
 /* popup ends */
-
 #hero {
   flex-direction: column;
   gap: 2.5rem;
