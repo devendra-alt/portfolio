@@ -21,10 +21,10 @@ closeBtn.addEventListener('click', () => {
 
 const projectsEl = document.querySelector('#projects');
 
-//popup section
+// popup section
 
 const getProjectById = (id) => {
-  for (let i = 0; i < projectData.length; i++) {
+  for (let i = 0; i < projectData.length; i += 1) {
     if (projectData[i].id === id) {
       return projectData[i];
     }
@@ -44,23 +44,15 @@ const popUpImgGallery = (project) => {
   mainImg.appendChild(projectImg);
   projectDiv.appendChild(mainImg);
 
-  let activeImg = null;
-
-  for (let i = 0; i < project.featured_images.length; i++) {
+  for (let i = 0; i < project.featured_images.length; i += 1) {
     const childImg = document.createElement('img');
     childImg.src = `assets/images/${project.featured_images[i]}.svg`;
     childImg.id = `img-${i + 1}`;
-    childImg.addEventListener('click', () => {
-      if (activeImg !== null) {
-        activeImg.classList.remove('selected-img');
-      }
-      projectImg.src = childImg.src;
-      childImg.classList.add('selected-img');
-      activeImg = childImg;
-    });
     projectDiv.appendChild(childImg);
+    childImg.addEventListener('click', () => {
+      projectImg.src = childImg.src;
+    });
   }
-
   return projectDiv;
 };
 
@@ -76,58 +68,14 @@ const popUpTextContent = (project) => {
   return [projectName, projectContent];
 };
 
-let idNumber = (str) => {
-  let arr = str.split('');
-  let idNo = arr[arr.length - 1];
-  let r_val = parseInt(idNo);
-  return r_val;
+const idNumber = (str) => {
+  const arr = str.split('');
+  const idNo = arr[arr.length - 1];
+  const rVal = parseInt(idNo, 10);
+  return rVal;
 };
 
-const prevNextBtn = (projectId) => {
-  const prevBtn = document.createElement('button');
-  const nextBtn = document.createElement('button');
-
-  prevBtn.classList.add('flex', 'bottom-slide');
-  nextBtn.classList.add('flex', 'bottom-slide');
-
-  prevBtn.innerHTML += `
-    <img src="assets/images/ic_arrow_left.svg"/>
-    <p>Previous project</p>
-  `;
-
-  nextBtn.innerHTML += `
-  <img src="assets/images/ic_arrow_right.svg"/>
-  <p>Next project</p>
-  `;
-
-  prevBtn.addEventListener('click', () => {
-    let IdNo = idNumber(projectId);
-    let preProject = getProjectById(`project-${IdNo - 1}`);
-    if (preProject !== null) {
-      projectCreater(preProject);
-    }
-  });
-
-  nextBtn.addEventListener('click', () => {
-    let IdNo = idNumber(projectId);
-    let nextProject = getProjectById(`project-${IdNo + 1}`);
-    if (nextProject !== null) {
-      projectCreater(nextProject);
-    }
-  });
-
-  const slideBtns = document.createElement('div');
-  slideBtns.classList.add('slide-btns');
-
-  slideBtns.appendChild(prevBtn);
-  slideBtns.appendChild(nextBtn);
-
-  prevBtn;
-
-  return slideBtns;
-};
-
-const btnStack = (project) => {
+const btnStack = () => {
   const liveBtn = document.createElement('button');
   liveBtn.className = 'pop-util-btn';
 
@@ -150,7 +98,7 @@ const btnStack = (project) => {
   btnfregment.appendChild(liveBtn);
   btnfregment.appendChild(sourceBtn);
 
-  let svgImg = sourceBtn.lastChild;
+  const svgImg = sourceBtn.lastChild;
 
   sourceBtn.addEventListener('mouseover', () => {
     svgImg.style.fill = 'white';
@@ -163,8 +111,22 @@ const btnStack = (project) => {
   return btnfregment;
 };
 
-const createPopUpContent = (projectBtn) => {
-  const project = getProjectById(projectBtn.id);
+const createProjectTechStack = (project) => {
+  const ulEl = document.createElement('ul');
+  ulEl.className = 'project-langs';
+  for (let i = 0; i < project.technologies.length; i += 1) {
+    const liEl = document.createElement('li');
+    liEl.className = 'project-lang';
+    const spanEl = document.createElement('span');
+    spanEl.textContent = `${project.technologies[i]}`;
+    liEl.appendChild(spanEl);
+    ulEl.appendChild(liEl);
+  }
+  return ulEl;
+};
+
+const createPopUpContent = (projectID) => {
+  const project = getProjectById(projectID);
   const projectDiv = document.createElement('div');
   projectDiv.classList.add('project-content', 'flex');
 
@@ -183,7 +145,6 @@ const createPopUpContent = (projectBtn) => {
   contentFreg.appendChild(popUpImgGallery(project));
   contentFreg.appendChild(TextContent[1]);
   contentFreg.appendChild(btnStack());
-  contentFreg.appendChild(prevNextBtn(projectBtn.id));
 
   projectDiv.appendChild(contentFreg);
 
@@ -200,17 +161,65 @@ const createPopUpCloseBtn = () => {
   return popUpCloseBtn;
 };
 
+const prevNextBtn = () => {
+  const prevBtn = document.createElement('button');
+  const nextBtn = document.createElement('button');
+
+  prevBtn.classList.add('flex', 'bottom-slide', 'b-1');
+  nextBtn.classList.add('flex', 'bottom-slide', 'b-2');
+
+  prevBtn.id = 'pop-pre-btn';
+  nextBtn.id = 'pop-post-btn';
+
+  prevBtn.innerHTML += `
+    <img src="assets/images/ic_arrow_left.svg"/>
+    <p>Previous project</p>
+  `;
+
+  nextBtn.innerHTML += `
+  <img src="assets/images/ic_arrow_right.svg"/>
+  <p>Next project</p>
+  `;
+
+  const slideBtns = document.createElement('div');
+  slideBtns.classList.add('slide-btns');
+
+  slideBtns.appendChild(prevBtn);
+  slideBtns.appendChild(nextBtn);
+
+  return slideBtns;
+};
+
 const projectCreater = (projectBtn) => {
   const projectPopUp = document.createElement('div');
   projectPopUp.classList.add('project-popup', 'popins');
 
   projectPopUp.innerHTML += createPopUpCloseBtn();
-  projectPopUp.appendChild(createPopUpContent(projectBtn));
+  projectPopUp.appendChild(createPopUpContent(projectBtn.id));
+  projectPopUp.appendChild(prevNextBtn(projectBtn.id));
 
   const cross = projectPopUp.firstChild;
   cross.classList.add('cross-div');
   const body = document.querySelector('body');
   body.appendChild(projectPopUp);
+
+  const id = idNumber(projectBtn.id);
+  const prevBtn = document.querySelector('.b-1');
+  prevBtn.addEventListener('click', () => {
+    const oldElement = document.querySelector('.project-content');
+    const pElement = document.querySelector('.project-popup');
+    pElement.replaceChild(createPopUpContent(`project-${id - 1}`), oldElement);
+  });
+
+  const nextBtn = document.querySelector('.b-2');
+  nextBtn.addEventListener('click', () => {
+    const oldElement = document.querySelector('.project-content');
+    const parentElement = oldElement.parentNode;
+    parentElement.replaceChild(
+      createPopUpContent(`project-${id + 1}`),
+      oldElement,
+    );
+  });
 
   const projectCloseBtn = document.querySelector('.cross-div > img');
   projectCloseBtn.addEventListener('click', () => {
@@ -257,20 +266,6 @@ const createProjectImage = (project) => {
   projectImg.className = 'project-img';
   projectImg.alt = 'project image';
   return projectImg;
-};
-
-const createProjectTechStack = (project) => {
-  const ulEl = document.createElement('ul');
-  ulEl.className = 'project-langs';
-  for (let i = 0; i < project.technologies.length; i += 1) {
-    const liEl = document.createElement('li');
-    liEl.className = 'project-lang';
-    const spanEl = document.createElement('span');
-    spanEl.textContent = `${project.technologies[i]}`;
-    liEl.appendChild(spanEl);
-    ulEl.appendChild(liEl);
-  }
-  return ulEl;
 };
 
 const createProjectOverlay = (project) => {
