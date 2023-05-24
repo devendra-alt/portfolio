@@ -2,7 +2,7 @@
 
 let projectData = [];
 
-let currentProject = null;
+let currentProject = 1;
 
 // mobile menu
 
@@ -163,7 +163,7 @@ const createPopUpCloseBtn = () => {
   return popUpCloseBtn;
 };
 
-const prevNextBtn = () => {
+const prevNextBtn = (projectID) => {
   const prevBtn = document.createElement('button');
   const nextBtn = document.createElement('button');
 
@@ -189,6 +189,33 @@ const prevNextBtn = () => {
   slideBtns.appendChild(prevBtn);
   slideBtns.appendChild(nextBtn);
 
+  const id = idNumber(projectID);
+
+  prevBtn.addEventListener('click', () => {
+    currentProject = id;
+    if (currentProject > 1) {
+      currentProject -= 1;
+      const perentNode = document.querySelector('.project-popup');
+      const oldNode = document.querySelector('.project-content');
+      perentNode.replaceChild(
+        createPopUpContent(`project-${currentProject}`),
+        oldNode,
+      );
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    currentProject = id;
+    if (currentProject < projectData.length) {
+      currentProject += 1;
+      const parentNode = document.querySelector('.project-popup');
+      const oldNode = document.querySelector('.project-content');
+      parentNode.replaceChild(
+        createPopUpContent(`project-${currentProject}`),
+        oldNode,
+      );
+    }
+  });
   return slideBtns;
 };
 
@@ -205,25 +232,6 @@ const projectCreater = (projectBtn) => {
   const body = document.querySelector('body');
   body.appendChild(projectPopUp);
 
-  
-  const id = idNumber(projectBtn.id);
-  const prevBtn = document.querySelector('.b-1');
-  prevBtn.addEventListener('click', () => {
-    const oldElement = document.querySelector('.project-content');
-    const pElement = document.querySelector('.project-popup');
-    pElement.replaceChild(createPopUpContent(`project-${id - 1}`), oldElement);
-  });
-
-  const nextBtn = document.querySelector('.b-2');
-  nextBtn.addEventListener('click', () => {
-    const oldElement = document.querySelector('.project-content');
-    const parentElement = oldElement.parentNode;
-    parentElement.replaceChild(
-      createPopUpContent(`project-${id + 1}`),
-      oldElement
-    );
-  });
-
   const projectCloseBtn = document.querySelector('.cross-div > img');
   projectCloseBtn.addEventListener('click', () => {
     document.querySelector('body').removeChild(projectPopUp);
@@ -235,9 +243,12 @@ const createPopUp = () => {
   projectBtns.forEach((projectBtn) => {
     projectBtn.addEventListener('click', () => {
       projectCreater(projectBtn);
-      let currentProject = projectBtn.id;
     });
   });
+  const prevBtn = document.querySelector('.b-1');
+  const nextBtn = document.querySelector('.b-2');
+  prevBtn.disabled = currentProject === 1;
+  nextBtn.disabled = currentProject === projectData.length;
 };
 
 // project section
