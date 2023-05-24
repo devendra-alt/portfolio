@@ -14,6 +14,157 @@ html {
   font-size: 10px;
 }
 
+.project-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  transition: 0.6s ease-in-out;
+  background-color: #fff;
+}
+
+.cross-div {
+  position: relative;
+}
+
+.cross-div > img {
+  position: absolute;
+  top: 2.4rem;
+  right: 1.6rem;
+  cursor: pointer;
+  width: 20px;
+}
+
+.project-content {
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.5rem;
+  margin: 7rem auto 5rem auto;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+
+.popup-project-title {
+  font-weight: 700;
+  color: #1a2236;
+  font-size: 2rem;
+}
+
+#popup-tech-ul {
+  padding-left: 0;
+  gap: 2%;
+}
+
+#popup-tech-ul > li {
+  background-color: #fff;
+  color: #1a2236;
+  border: 0.516669px solid #1a2236;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-project-desc {
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 2.7rem;
+}
+
+.pop-util-btn {
+  margin-left: 10%;
+  margin-right: 10%;
+  padding-top: 1.2rem;
+  padding-bottom: 1.2rem;
+  position: relative;
+  font-weight: 500;
+  font-size: 1.8rem;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #1a2236;
+  cursor: pointer;
+  margin-top: 2.2rem;
+}
+
+.pop-util-btn:hover {
+  background: #1a2236;
+  color: #fff;
+}
+
+.pop-util-btn > img,
+.pop-util-btn > svg {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+}
+
+.slide-btns {
+  display: none;
+}
+
+.pop-btn-freg {
+  flex-direction: column;
+}
+
+/* popup image gallery */
+.popUpImgGallery {
+  display: grid;
+  grid-template-rows: 20% 1fr 1fr 1fr 1fr;
+  grid-template-columns: 25% 1fr 1fr 1fr;
+  grid-template-areas:
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'main main main main'
+    'img-1 img-2 img-3 img-4';
+  flex: 1;
+  overflow: auto;
+}
+
+.popUpImgGallery > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+#main {
+  grid-area: main;
+}
+
+#img-1 {
+  grid-area: img-1;
+}
+
+#img-2 {
+  grid-area: img-2;
+}
+
+#img-3 {
+  grid-area: img-3;
+}
+
+#img-4 {
+  grid-area: img-4;
+}
+
+.hero-end img {
+  width: 100%;
+}
+
+#main > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selected-img {
+  border: 0.1rem solid #1a2236;
+}
+
+/* popup ends */
 #hero {
   flex-direction: column;
   gap: 2.5rem;
@@ -23,10 +174,6 @@ html {
 
 .hero-main {
   display: none;
-}
-
-.hero-end img {
-  width: 100%;
 }
 
 .hero-container {
@@ -512,6 +659,65 @@ footer {
     display: none;
   }
 
+  /* popup */
+  .project-popup {
+    padding-left: 6rem;
+    padding-right: 6rem;
+  }
+
+  .project-content {
+    gap: 5rem;
+  }
+
+  .popup-project-title {
+    font-size: 6rem;
+  }
+
+  #popup-tech-ul > li {
+    font-size: 1.6rem;
+    padding: 2rem;
+  }
+
+  .pop-util-btn {
+    padding-left: 7rem;
+    padding-right: 7rem;
+    margin: 0;
+  }
+
+  .pop-btn-freg {
+    flex-direction: row;
+    gap: 5rem;
+  }
+
+  .slide-btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8rem;
+    margin-bottom: 10rem;
+  }
+
+  .pop-btn-freg,
+  .slide-btns,
+  .popup-project-desc {
+    margin-left: 22rem;
+    margin-right: 22rem;
+  }
+
+  .bottom-slide {
+    border: none;
+    background-color: #fff;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-weight: 300;
+    font-size: 1.8rem;
+  }
+
+  .bottom-slide:last-child {
+    flex-direction: row-reverse;
+  }
+
   /* hero section */
 
   #hero {
@@ -790,5 +996,17 @@ footer {
 
   .card {
     min-width: 25rem;
+  }
+
+  .popup-project-desc,
+  .pop-btn-freg,
+  .slide-btns {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .project .project-overlay:hover {
+    height: 100%;
+    opacity: 1;
   }
 }

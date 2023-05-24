@@ -2,9 +2,12 @@
   "projects": [
     {
       "id": "project-1",
-      "name": "Project name goes here",
+      "name": "project 1",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
+        "project-01",
+        "project-01",
+        "project-01",
         "project-01"
       ],
       "technologies": [
@@ -17,9 +20,12 @@
     },
     {
       "id": "project-2",
-      "name": "Project name goes here",
+      "name": "project 2",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
+        "project-02",
+        "project-02",
+        "project-02",
         "project-02"
       ],
       "technologies": [
@@ -32,9 +38,12 @@
     },
     {
       "id": "project-3",
-      "name": "Project name goes here",
+      "name": "project 3",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
+        "project-03",
+        "project-03",
+        "project-03",
         "project-03"
       ],
       "technologies": [
@@ -47,9 +56,12 @@
     },
     {
       "id": "project-4",
-      "name": "Project name goes here",
+      "name": "project 4",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
+        "project-04",
+        "project-04",
+        "project-04",
         "project-04"
       ],
       "technologies": [
@@ -62,9 +74,12 @@
     },
     {
       "id": "project-5",
-      "name": "Project name goes here",
+      "name": "project 5",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
+        "project-05",
+        "project-05",
+        "project-05",
         "project-05"
       ],
       "technologies": [
@@ -77,10 +92,13 @@
     },
     {
       "id": "project-6",
-      "name": "Project name goes here",
+      "name": "project 6",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
       "featured_images": [
-        "project-06"
+        "project-06",
+        "project-05",
+        "project-05",
+        "project-05"
       ],
       "technologies": [
         "HTML/CSS",
