@@ -329,7 +329,9 @@ loadProjects();
 // email validation start
 
 const form = document.querySelector('form');
+const userNameInput = document.querySelector('#user-name');
 const emailInput = document.querySelector('#email');
+const msgInput = document.querySelector('#user-message');
 const errorText = document.querySelector('#error-text');
 
 form.addEventListener('submit', (event) => {
@@ -344,3 +346,55 @@ form.addEventListener('submit', (event) => {
 });
 
 // email validation end
+
+// local storage
+
+// local storage
+
+const retriveLocalObject = () => {
+  const userDataString = localStorage.getItem('userData');
+  if (!userDataString) {
+    const object = {};
+    const jsonString = JSON.stringify(object);
+    localStorage.setItem('userData', jsonString);
+    return null;
+  }
+  const userDataObject = JSON.parse(userDataString);
+  return userDataObject;
+};
+
+const stringifyMethod = (updateObject) => {
+  const updateObjectString = JSON.stringify(updateObject);
+  localStorage.setItem('userData', updateObjectString);
+};
+
+userNameInput.onchange = () => {
+  const updateObject = retriveLocalObject();
+  updateObject.name = userNameInput.value;
+  stringifyMethod(updateObject);
+};
+
+emailInput.onchange = () => {
+  const updateObject = retriveLocalObject();
+  updateObject.email = emailInput.value;
+  stringifyMethod(updateObject);
+};
+
+msgInput.onchange = () => {
+  const updateObject = retriveLocalObject();
+  updateObject.msg = msgInput.value;
+  stringifyMethod(updateObject);
+};
+
+const retriveLocalData = () => {
+  const userData = retriveLocalObject();
+  if (userData) {
+    if (Object.keys(userData) !== 0) {
+      userNameInput.value = userData.name ? userData.name : '';
+      emailInput.value = userData.email ? userData.email : '';
+      msgInput.value = userData.msg ? userData.msg : '';
+    }
+  }
+};
+
+retriveLocalData();
