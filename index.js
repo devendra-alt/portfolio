@@ -215,6 +215,13 @@ const prevNextBtn = (projectID) => {
   return slideBtns;
 };
 
+const projectPopUpCloseEventListener = (projectPopUp) => {
+  const projectCloseBtn = document.querySelector('.cross-div > img');
+  projectCloseBtn.addEventListener('click', () => {
+    document.querySelector('body').removeChild(projectPopUp);
+  });
+};
+
 const projectCreater = (projectId) => {
   const projectPopUp = document.createElement('div');
   projectPopUp.classList.add('project-popup', 'popins');
@@ -227,14 +234,8 @@ const projectCreater = (projectId) => {
   cross.classList.add('cross-div');
   const body = document.querySelector('body');
   body.appendChild(projectPopUp);
-};
 
-const projectPopUpCloseEventListener = () => {
-  const projectPopUp = document.querySelector('.project-popup');
-  const projectCloseBtn = document.querySelector('.cross-div > img');
-  projectCloseBtn.addEventListener('click', () => {
-    document.querySelector('body').removeChild(projectPopUp);
-  });
+  projectPopUpCloseEventListener(projectPopUp);
 };
 
 const createPopUp = () => {
@@ -244,7 +245,6 @@ const createPopUp = () => {
       projectCreater(projectBtn.id);
     });
   });
-  projectPopUpCloseEventListener();
 };
 
 // project section
