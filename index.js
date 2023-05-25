@@ -326,7 +326,7 @@ const loadProjects = () => {
 
 loadProjects();
 
-// email validation
+// email validation start
 
 const form = document.querySelector('form');
 const emailInput = document.querySelector('#email');
@@ -334,9 +334,9 @@ const errorText = document.querySelector('#error-text');
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  const emailTxt = emailInput.value;
+  const emailText = emailInput.value;
 
-  if (emailTxt === emailTxt.toLowerCase()) {
+  if (emailText === emailText.toLowerCase()) {
     form.submit();
   } else {
     errorText.style.display = 'block';
