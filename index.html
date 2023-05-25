@@ -13,8 +13,8 @@
       rel="stylesheet"
     />
   </head>
-  <body>    
-  <!-- header section -->
+  <body>
+    <!-- header section -->
     <header class="flex">
       <!-- mobile nav -->
       <nav class="mobile-nav popins">
@@ -159,9 +159,6 @@
           method="POST"
           class="popins flex"
         >
-          <p id="error-text">
-            Invalid email address. Please enter a lowercase email.
-          </p>
           <label for="user-name" class="form-label">Your name</label>
           <input
             type="text"
@@ -181,6 +178,9 @@
             required
             name="email"
           />
+          <p id="error-text">
+            Invalid email address. Please enter a lowercase email.
+          </p>
           <label for="user-message" class="form-label">Your message</label>
           <textarea
             class="form-control"
