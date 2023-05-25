@@ -198,9 +198,6 @@ const prevNextBtn = (projectID) => {
       const perentNode = document.querySelector('.project-popup');
       const oldNode = document.querySelector('.project-content');
       const newNode = createPopUpContent(`project-${currentProject - 1}`);
-      console.log(currentProject);
-      console.log(oldNode);
-      console.log(newNode);
       perentNode.replaceChild(newNode, oldNode);
     }
   });
@@ -212,9 +209,6 @@ const prevNextBtn = (projectID) => {
       const parentNode = document.querySelector('.project-popup');
       const oldNode = document.querySelector('.project-content');
       const newNode = createPopUpContent(`project-${currentProject + 1}`);
-      console.log(newNode);
-      console.log(currentProject);
-      console.log(oldNode);
       parentNode.replaceChild(newNode, oldNode);
     }
   });
@@ -236,6 +230,7 @@ const projectCreater = (projectId) => {
 };
 
 const projectPopUpCloseEventListener = () => {
+  const projectPopUp = document.querySelector('.project-popup');
   const projectCloseBtn = document.querySelector('.cross-div > img');
   projectCloseBtn.addEventListener('click', () => {
     document.querySelector('body').removeChild(projectPopUp);
@@ -311,7 +306,7 @@ const createProject = (project) => {
   return projectEl;
 };
 
-//project section end
+// project section end
 
 const loadProjects = () => {
   fetch('projects.json')
@@ -335,13 +330,11 @@ loadProjects();
 
 const form = document.querySelector('form');
 const emailInput = document.querySelector('#email');
-const submitBtn = document.querySelector('#start-collab-btn');
 const errorText = document.querySelector('#error-text');
 
 form.addEventListener('submit', (event) => {
-  event.preventDef;
-  ault();
-  let emailTxt = emailInput.value;
+  event.preventDefault();
+  const emailTxt = emailInput.value;
 
   if (emailTxt === emailTxt.toLowerCase()) {
     form.submit();
