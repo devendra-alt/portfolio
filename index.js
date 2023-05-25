@@ -197,10 +197,11 @@ const prevNextBtn = (projectID) => {
       currentProject -= 1;
       const perentNode = document.querySelector('.project-popup');
       const oldNode = document.querySelector('.project-content');
-      perentNode.replaceChild(
-        createPopUpContent(`project-${currentProject}`),
-        oldNode,
-      );
+      const newNode = createPopUpContent(`project-${currentProject - 1}`);
+      console.log(currentProject);
+      console.log(oldNode);
+      console.log(newNode);
+      perentNode.replaceChild(newNode, oldNode);
     }
   });
 
@@ -210,28 +211,31 @@ const prevNextBtn = (projectID) => {
       currentProject += 1;
       const parentNode = document.querySelector('.project-popup');
       const oldNode = document.querySelector('.project-content');
-      parentNode.replaceChild(
-        createPopUpContent(`project-${currentProject}`),
-        oldNode,
-      );
+      const newNode = createPopUpContent(`project-${currentProject + 1}`);
+      console.log(newNode);
+      console.log(currentProject);
+      console.log(oldNode);
+      parentNode.replaceChild(newNode, oldNode);
     }
   });
   return slideBtns;
 };
 
-const projectCreater = (projectBtn) => {
+const projectCreater = (projectId) => {
   const projectPopUp = document.createElement('div');
   projectPopUp.classList.add('project-popup', 'popins');
 
   projectPopUp.innerHTML += createPopUpCloseBtn();
-  projectPopUp.appendChild(createPopUpContent(projectBtn.id));
-  projectPopUp.appendChild(prevNextBtn(projectBtn.id));
+  projectPopUp.appendChild(createPopUpContent(projectId));
+  projectPopUp.appendChild(prevNextBtn(projectId));
 
   const cross = projectPopUp.firstChild;
   cross.classList.add('cross-div');
   const body = document.querySelector('body');
   body.appendChild(projectPopUp);
+};
 
+const projectPopUpCloseEventListener = () => {
   const projectCloseBtn = document.querySelector('.cross-div > img');
   projectCloseBtn.addEventListener('click', () => {
     document.querySelector('body').removeChild(projectPopUp);
@@ -242,13 +246,10 @@ const createPopUp = () => {
   const projectBtns = document.querySelectorAll('.project-btn');
   projectBtns.forEach((projectBtn) => {
     projectBtn.addEventListener('click', () => {
-      projectCreater(projectBtn);
+      projectCreater(projectBtn.id);
     });
   });
-  const prevBtn = document.querySelector('.b-1');
-  const nextBtn = document.querySelector('.b-2');
-  prevBtn.disabled = currentProject === 1;
-  nextBtn.disabled = currentProject === projectData.length;
+  projectPopUpCloseEventListener();
 };
 
 // project section
@@ -310,6 +311,8 @@ const createProject = (project) => {
   return projectEl;
 };
 
+//project section end
+
 const loadProjects = () => {
   fetch('projects.json')
     .then((response) => response.json())
@@ -327,3 +330,24 @@ const loadProjects = () => {
 };
 
 loadProjects();
+
+// email validation
+
+const form = document.querySelector('form');
+const emailInput = document.querySelector('#email');
+const submitBtn = document.querySelector('#start-collab-btn');
+const errorText = document.querySelector('#error-text');
+
+form.addEventListener('submit', (event) => {
+  event.preventDef;
+  ault();
+  let emailTxt = emailInput.value;
+
+  if (emailTxt === emailTxt.toLowerCase()) {
+    form.submit();
+  } else {
+    errorText.style.display = 'block';
+  }
+});
+
+// email validation end
