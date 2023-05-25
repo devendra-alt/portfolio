@@ -349,8 +349,6 @@ form.addEventListener('submit', (event) => {
 
 // local storage
 
-// local storage
-
 const retriveLocalObject = () => {
   const userDataString = localStorage.getItem('userData');
   if (!userDataString) {
