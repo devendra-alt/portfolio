@@ -433,6 +433,12 @@ form {
   flex-direction: column;
 }
 
+#error-text {
+  display: none;
+  font-size: 1.5rem;
+  color: #e2505c;
+}
+
 .form-label {
   color: #7d7c84;
   font-size: 1rem;
