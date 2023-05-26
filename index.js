@@ -1,8 +1,7 @@
 // global
 
 let projectData = [];
-
-let currentProject = 1;
+let projectId = '';
 
 // mobile menu
 
@@ -71,7 +70,7 @@ const popUpTextContent = (project) => {
 };
 
 const idNumber = (str) => {
-  const arr = str.split('');
+  const arr = str.toString().split('');
   const idNo = arr[arr.length - 1];
   const rVal = parseInt(idNo, 10);
   return rVal;
@@ -127,8 +126,8 @@ const createProjectTechStack = (project) => {
   return ulEl;
 };
 
-const createPopUpContent = (projectID) => {
-  const project = getProjectById(projectID);
+const createPopUpContent = () => {
+  const project = getProjectById(projectId);
   const projectDiv = document.createElement('div');
   projectDiv.classList.add('project-content', 'flex');
 
@@ -163,7 +162,17 @@ const createPopUpCloseBtn = () => {
   return popUpCloseBtn;
 };
 
-const prevNextBtn = (projectID) => {
+const contentReplacer = (Btn, Id) => {
+  const newContent = createPopUpContent(Id);
+  const parentNode = document.querySelector('.project-popup');
+  const currentNode = document.querySelector('.project-content');
+  Btn.id = Id;
+  parentNode.replaceChild(newContent, currentNode);
+  projectId = Id;
+  return Btn;
+};
+
+const prevNextBtn = () => {
   const prevBtn = document.createElement('button');
   const nextBtn = document.createElement('button');
 
@@ -186,32 +195,42 @@ const prevNextBtn = (projectID) => {
   const slideBtns = document.createElement('div');
   slideBtns.classList.add('slide-btns');
 
-  slideBtns.appendChild(prevBtn);
-  slideBtns.appendChild(nextBtn);
+  prevBtn.disabled = projectId === 'project-1';
 
-  const id = idNumber(projectID);
+  const lastElIndex = projectData.length - 1;
+  const lastEl = projectData[lastElIndex].id;
+
+  nextBtn.disabled = projectId === lastEl;
 
   prevBtn.addEventListener('click', () => {
-    currentProject = id;
-    if (currentProject > 1) {
-      currentProject -= 1;
-      const perentNode = document.querySelector('.project-popup');
-      const oldNode = document.querySelector('.project-content');
-      const newNode = createPopUpContent(`project-${currentProject - 1}`);
-      perentNode.replaceChild(newNode, oldNode);
+    const currentId = idNumber(projectId);
+    let preId = `project-${currentId - 1}`;
+    prevBtn.disabled = preId === 'project-0';
+    if (preId === 'project-0') {
+      preId = 'project-2';
     }
+    const disabler = idNumber(preId);
+    nextBtn.disabled = preId === `project-${disabler + 1}`;
+    contentReplacer(prevBtn, preId);
   });
 
   nextBtn.addEventListener('click', () => {
-    currentProject = id;
-    if (currentProject < projectData.length) {
-      currentProject += 1;
-      const parentNode = document.querySelector('.project-popup');
-      const oldNode = document.querySelector('.project-content');
-      const newNode = createPopUpContent(`project-${currentProject + 1}`);
-      parentNode.replaceChild(newNode, oldNode);
+    const currentId = idNumber(projectId);
+    let postId = `project-${currentId + 1}`;
+    const lastEl = projectData[lastElIndex].id;
+    const disabler = idNumber(lastEl);
+    nextBtn.disabled = postId === `project-${disabler + 1}`;
+    prevBtn.disabled = postId === 'project-0';
+    if (postId === `project-${disabler + 1}`) {
+      const elChanger = idNumber(lastEl);
+      postId = `project-${elChanger - 1}`;
     }
+    contentReplacer(nextBtn, postId);
   });
+
+  slideBtns.appendChild(prevBtn);
+  slideBtns.appendChild(nextBtn);
+
   return slideBtns;
 };
 
@@ -222,13 +241,14 @@ const projectPopUpCloseEventListener = (projectPopUp) => {
   });
 };
 
-const projectCreater = (projectId) => {
+const projectCreater = (currentProjectId) => {
+  projectId = currentProjectId;
   const projectPopUp = document.createElement('div');
   projectPopUp.classList.add('project-popup', 'popins');
 
   projectPopUp.innerHTML += createPopUpCloseBtn();
-  projectPopUp.appendChild(createPopUpContent(projectId));
-  projectPopUp.appendChild(prevNextBtn(projectId));
+  projectPopUp.appendChild(createPopUpContent());
+  projectPopUp.appendChild(prevNextBtn());
 
   const cross = projectPopUp.firstChild;
   cross.classList.add('cross-div');
