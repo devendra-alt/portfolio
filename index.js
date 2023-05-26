@@ -162,12 +162,10 @@ const createPopUpCloseBtn = () => {
   return popUpCloseBtn;
 };
 
-const btnDisabler = () => {};
-
 const contentReplacer = (Btn, Id) => {
-  let newContent = createPopUpContent(Id);
-  let parentNode = document.querySelector('.project-popup');
-  let currentNode = document.querySelector('.project-content');
+  const newContent = createPopUpContent(Id);
+  const parentNode = document.querySelector('.project-popup');
+  const currentNode = document.querySelector('.project-content');
   Btn.id = Id;
   parentNode.replaceChild(newContent, currentNode);
   projectId = Id;
@@ -175,8 +173,8 @@ const contentReplacer = (Btn, Id) => {
 };
 
 const prevNextBtn = () => {
-  let prevBtn = document.createElement('button');
-  let nextBtn = document.createElement('button');
+  const prevBtn = document.createElement('button');
+  const nextBtn = document.createElement('button');
 
   prevBtn.classList.add('flex', 'bottom-slide', 'b-1');
   nextBtn.classList.add('flex', 'bottom-slide', 'b-2');
@@ -199,27 +197,34 @@ const prevNextBtn = () => {
 
   prevBtn.disabled = projectId === 'project-1';
 
-  let lastElIndex = projectData.length - 1;
+  const lastElIndex = projectData.length - 1;
   const lastEl = projectData[lastElIndex].id;
 
   nextBtn.disabled = projectId === lastEl;
 
   prevBtn.addEventListener('click', () => {
-    let currentId = idNumber(projectId);
-    const lastEl = projectData[lastElIndex].id;
+    const currentId = idNumber(projectId);
     let preId = `project-${currentId - 1}`;
-    prevBtn.disabled = preId === 'project-1';
-    nextBtn.disabled = preId === lastEl;
+    prevBtn.disabled = preId === 'project-0';
+    if (preId === 'project-0') {
+      preId = 'project-2';
+    }
+    const disabler = idNumber(preId);
+    nextBtn.disabled = preId === `project-${disabler + 1}`;
     contentReplacer(prevBtn, preId);
   });
 
   nextBtn.addEventListener('click', () => {
-    let currentId = idNumber(projectId);
+    const currentId = idNumber(projectId);
     let postId = `project-${currentId + 1}`;
     const lastEl = projectData[lastElIndex].id;
-    nextBtn.disabled = postId === lastEl;
-    prevBtn.disabled = postId === 'project-1';
-    console.log(postId);
+    const disabler = idNumber(lastEl);
+    nextBtn.disabled = postId === `project-${disabler + 1}`;
+    prevBtn.disabled = postId === 'project-0';
+    if (postId === `project-${disabler + 1}`) {
+      const elChanger = idNumber(lastEl);
+      postId = `project-${elChanger - 1}`;
+    }
     contentReplacer(nextBtn, postId);
   });
 
@@ -238,7 +243,6 @@ const projectPopUpCloseEventListener = (projectPopUp) => {
 
 const projectCreater = (currentProjectId) => {
   projectId = currentProjectId;
-  console.log(typeof projectId);
   const projectPopUp = document.createElement('div');
   projectPopUp.classList.add('project-popup', 'popins');
 
