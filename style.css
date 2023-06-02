@@ -522,8 +522,7 @@ header {
 .open-menu {
   background-color: #fff;
   height: 100vh;
-  background-image:
-    url(assets/images/img_g1_mobile_menu.svg),
+  background-image: url(assets/images/img_g1_mobile_menu.svg),
     url(assets/images/img_g1_mobile_menu_b.svg);
   background-repeat: no-repeat, no-repeat;
   background-position: top left, bottom right;
@@ -787,7 +786,7 @@ footer {
     grid-template-rows: 6.41fr 2fr 1fr 1fr 2fr 3.16fr 3.1fr;
     grid-template-columns: 2.66fr 1fr 1fr 1fr 1.66fr 1fr;
     grid-template-areas:
-      'project-title project-1 project-1 project-1 project-1 project-1'
+      'project-title project-1  project-1 project-1 project-1'
       'project-2     bg-1      bg-1      bg-1      project-6 project-6'
       'project-2     bg-1      bg-1      bg-1      project-6 project-6'
       'project-2     bg-1      bg-1      bg-1      project-5 project-5'
@@ -874,8 +873,7 @@ footer {
 
   #bg-3 {
     grid-area: bg-3;
-    background-image:
-      url(assets/images/bg-3.svg),
+    background-image: url(assets/images/bg-3.svg),
       url(assets/images/bg-3_v2.svg);
     background-repeat: no-repeat, no-repeat;
     background-position-x: left, right;
@@ -950,8 +948,7 @@ footer {
   }
 
   #contact-me {
-    background-image:
-      url(assets/images/contact-bg.svg),
+    background-image: url(assets/images/contact-bg.svg),
       url(assets/images/image-geometry_7.svg);
     background-repeat: no-repeat;
     background-position-x: left, right;
