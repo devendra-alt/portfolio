@@ -40,7 +40,11 @@ const popUpImgGallery = (project) => {
   const mainImg = document.createElement('div');
   mainImg.id = 'main';
   const projectImg = document.createElement('img');
-  const projectImgSrc = `assets/images/${project.featured_images[0]}.svg`;
+  let projectImgSrc = `assets/images/${project.featured_images[0]}.svg`;
+
+  if (project.id === 'project-1') {
+    projectImgSrc = `assets/images/${project.featured_images[0]}.png`;
+  }
   projectImg.src = projectImgSrc;
   mainImg.appendChild(projectImg);
   projectDiv.appendChild(mainImg);
@@ -48,6 +52,9 @@ const popUpImgGallery = (project) => {
   for (let i = 0; i < project.featured_images.length; i += 1) {
     const childImg = document.createElement('img');
     childImg.src = `assets/images/${project.featured_images[i]}.svg`;
+    if (project.id === 'project-1') {
+      childImg.src = `assets/images/${project.featured_images[i]}.png`;
+    }
     childImg.id = `img-${i + 1}`;
     projectDiv.appendChild(childImg);
     childImg.addEventListener('click', () => {
@@ -76,7 +83,7 @@ const idNumber = (str) => {
   return rVal;
 };
 
-const btnStack = () => {
+const btnStack = (project) => {
   const liveBtn = document.createElement('button');
   liveBtn.className = 'pop-util-btn';
 
@@ -109,6 +116,13 @@ const btnStack = () => {
     svgImg.style.fill = '#1a2236';
   });
 
+  liveBtn.addEventListener('click', () => {
+    window.open(`${project.live_link}`, '_blank');
+  });
+
+  sourceBtn.addEventListener('click', () => {
+    window.open(`${project.source_link}`, '_blank');
+  });
   return btnfregment;
 };
 
@@ -145,7 +159,7 @@ const createPopUpContent = () => {
   contentFreg.appendChild(popUpProjectTechUlDiv);
   contentFreg.appendChild(popUpImgGallery(project));
   contentFreg.appendChild(TextContent[1]);
-  contentFreg.appendChild(btnStack());
+  contentFreg.appendChild(btnStack(project));
 
   projectDiv.appendChild(contentFreg);
 
@@ -293,7 +307,11 @@ const createProjectBtn = (project) => {
 
 const createProjectImage = (project) => {
   const projectImg = document.createElement('img');
-  projectImg.src = `assets/images/${project.featured_images[0]}.svg`;
+  if (project.id === 'project-1') {
+    projectImg.src = `assets/images/${project.featured_images[0]}.png`;
+  } else {
+    projectImg.src = `assets/images/${project.featured_images[0]}.svg`;
+  }
   projectImg.className = 'project-img';
   projectImg.alt = 'project image';
   return projectImg;
