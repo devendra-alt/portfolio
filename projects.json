@@ -2,21 +2,23 @@
   "projects": [
     {
       "id": "project-1",
-      "name": "project 1",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "name": "HackBlitz hackathon",
+      "description": "HackBlitz is a dynamic and engaging hackathon platform that brings together innovative minds from various backgrounds to collaborate, ideate, and create impactful projects.",
       "featured_images": [
-        "project-01",
-        "project-01",
-        "project-01",
-        "project-01"
+        "p1_pic_1",
+        "p1_pic_2",
+        "p1_pic_3",
+        "p1_pic_4",
+        "p1_pic_5"
       ],
       "technologies": [
         "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
+        "Javascript",
+        "github workflow",
+        "High fidility Design"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "https://devendra-alt.github.io/capstone-hackBlitz/",
+      "source_link": "https://github.com/devendra-alt/capstone-hackBlitz"
     },
     {
       "id": "project-2",
@@ -33,8 +35,8 @@
         "Ruby on Rails",
         "Javascript"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "",
+      "source_link": ""
     },
     {
       "id": "project-3",
@@ -51,8 +53,8 @@
         "Ruby on Rails",
         "Javascript"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "",
+      "source_link": ""
     },
     {
       "id": "project-4",
@@ -69,8 +71,8 @@
         "Ruby on Rails",
         "Javascript"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "",
+      "source_link": ""
     },
     {
       "id": "project-5",
@@ -87,8 +89,8 @@
         "Ruby on Rails",
         "Javascript"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "",
+      "source_link": ""
     },
     {
       "id": "project-6",
@@ -105,8 +107,8 @@
         "Ruby on Rails",
         "Javascript"
       ],
-      "live-link": "",
-      "source-link": ""
+      "live_link": "",
+      "source_link": ""
     }
   ]
 }
