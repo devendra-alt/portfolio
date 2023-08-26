@@ -2,6 +2,25 @@
   "projects": [
     {
       "id": "project-1",
+      "name": "AQI monitor",
+      "description": "Software Developer Engineer · drilled down thousands of data points to curate 250+ major cities’ data worldwide, made react.js SPA for presenting real-time air quality index and population.",
+      "featured_images": [
+        "p2_pic_1",
+        "p2_pic_2",
+        "p2_pic_3",
+        "p2_pic_3"
+      ],
+      "technologies": [
+        "React.js",
+        "TDD",
+        "Redux",
+        "Postman"
+      ],
+      "live_link": "https://aqi-monitor.onrender.com/",
+      "source_link": "https://github.com/devendra-alt/aqi-monitor"
+    },
+    {
+      "id": "project-2",
       "name": "HackBlitz hackathon",
       "description": "HackBlitz is a dynamic and engaging hackathon platform that brings together innovative minds from various backgrounds to collaborate, ideate, and create impactful projects.",
       "featured_images": [
@@ -21,94 +40,77 @@
       "source_link": "https://github.com/devendra-alt/capstone-hackBlitz"
     },
     {
-      "id": "project-2",
-      "name": "project 2",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
-      "featured_images": [
-        "project-02",
-        "project-02",
-        "project-02",
-        "project-02"
-      ],
-      "technologies": [
-        "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
-      ],
-      "live_link": "",
-      "source_link": ""
-    },
-    {
       "id": "project-3",
-      "name": "project 3",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "name": "SPARKLES DE'LIGHT MEALS",
+      "description": "Used our Interaction API endpoints for storing User Interaction on Meal Items. Implemented add comment feature. Practiced git-flow and code review.",
       "featured_images": [
-        "project-03",
-        "project-03",
-        "project-03",
-        "project-03"
+        "p3_pic_1",
+        "p3_pic_1",
+        "p3_pic_1"
       ],
       "technologies": [
-        "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
+        "Javascript ES6",
+        "Wepack",
+        "JEST tests"
       ],
-      "live_link": "",
-      "source_link": ""
+      "live_link": "https://devendra-alt.github.io/ES6-capstone/",
+      "source_link": "https://github.com/devendra-alt/ES6-capstone/"
     },
     {
       "id": "project-4",
-      "name": "project 4",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "name": "Space Travel Hub",
+      "description": "Software Developer Engineer · curated missions and rocket data from SpaceX. Implemented rocket reservation feature. did pair programming, and used git flow, and kanban for project management.",
       "featured_images": [
-        "project-04",
-        "project-04",
-        "project-04",
-        "project-04"
+        "p4_pic_1",
+        "p4_pic_1",
+        "p4_pic_1",
+        "p4_pic_1"
       ],
       "technologies": [
-        "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
+        "React",
+        "Redux",
+        "TDD",
+        "Bootstrap"
       ],
-      "live_link": "",
-      "source_link": ""
+      "live_link": "https://space-travel-hub-8x7y.onrender.com/",
+      "source_link": "https://github.com/devendra-alt/space-travel-hub"
     },
     {
       "id": "project-5",
-      "name": "project 5",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "name": "BookStore CMS",
+      "description": "react reduce toolkit based bookstore web application, where users can perform basic book ADD remove actions",
       "featured_images": [
-        "project-05",
-        "project-05",
-        "project-05",
-        "project-05"
+        "p5_pic_1",
+        "p5_pic_1",
+        "p5_pic_1",
+        "p5_pic_1"
       ],
       "technologies": [
-        "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
+        "React",
+        "Redux",
+        "TDD"
       ],
-      "live_link": "",
-      "source_link": ""
+      "live_link": "https://boostore-cms.onrender.com/",
+      "source_link": "https://github.com/devendra-alt/bookstore-cms/"
     },
     {
       "id": "project-6",
-      "name": "project 6",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi Ut aliquip ex ea commodo consequat.  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.",
+      "name": "Math Magician",
+      "description": "react application where user perform calculations and see random quotes",
       "featured_images": [
-        "project-06",
-        "project-05",
-        "project-05",
-        "project-05"
+        "p6_pic_1",
+        "p6_pic_1",
+        "p6_pic_1",
+        "p6_pic_1"
       ],
       "technologies": [
-        "HTML/CSS",
-        "Ruby on Rails",
-        "Javascript"
+        "React",
+        "React test library",
+        "JEST",
+        "Postman"
       ],
-      "live_link": "",
-      "source_link": ""
+      "live_link": "https://dashing-hummingbird-7a411a.netlify.app/",
+      "source_link": "https://github.com/devendra-alt/math-magicians"
     }
   ]
 }
