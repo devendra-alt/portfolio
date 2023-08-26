@@ -40,7 +40,7 @@ const popUpImgGallery = (project) => {
   const mainImg = document.createElement('div');
   mainImg.id = 'main';
   const projectImg = document.createElement('img');
-  let projectImgSrc = `assets/images/${project.featured_images[0]}.png`;
+  const projectImgSrc = `assets/images/${project.featured_images[0]}.png`;
   projectImg.src = projectImgSrc;
   mainImg.appendChild(projectImg);
   projectDiv.appendChild(mainImg);
